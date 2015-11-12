@@ -4,9 +4,11 @@ create table Utente (
         (start with 1, increment by 1),
     email varchar(50) not null,
     password varchar(50) not null,
-	data varchar(5),
+	data date,
     nome varchar(50),
     cognome varchar(50),
+    telefono varchar(16),
+    indirizzo varchar(50),
     path_foto varchar(255),
     constraint id_utente primary key (id_utente),
     constraint utente_email unique (email)

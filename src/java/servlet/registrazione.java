@@ -38,9 +38,11 @@ public class registrazione extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("pass1");
         String date = request.getParameter("date");
+        String telefono = request.getParameter("num_tel");
+        String indirizzo = request.getParameter("indirizzo");
         DBManager manager = (DBManager)super.getServletContext().getAttribute("dbmanager"); 
-        String sql = "INSERT INTO carpediem.Utente (email, password, data, nome, cognome, path_foto) values (?, ?, ?, ?, ?, ?)";
-        manager.setData(sql, email, password, date, nome, cognome, null);
+        String sql = "INSERT INTO carpediem.Utente (email, password, data, nome, cognome, telefono, indirizzo, path_foto) values (?, ?, ?, ?, ?, ?, ?, ?)";
+        manager.setData(sql, email, password, date, nome, cognome, telefono, indirizzo, null);
         response.sendRedirect("reg_ok.jsp");
     }
 

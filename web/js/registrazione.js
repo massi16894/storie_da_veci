@@ -44,4 +44,17 @@ $(document).ready(function(){
             event.preventDefault();
         }
     });
+    
+    for(var i=1; i<32; i++) {
+        $('#day').append("<option>"+ i +"</option>");
+    }
+    
+    for(var i=1; i<13; i++) {
+        $('#month').append("<option>"+ i +"</option>");
+    }
+    
+    for(var i=1900; i<1981; i++) {
+        $('#year').append("<option>"+ i +"</option>");
+    }
+    
 });

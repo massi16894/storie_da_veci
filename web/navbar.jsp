@@ -39,6 +39,8 @@
                     } else {
                 %>
                 <ul class="nav navbar-nav navbar-right">
+                    <li><a href="user">Esci</a></li>
+                    <!--
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Logged in as <%= user.getNome()+" "+user.getCognome()%> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -47,6 +49,7 @@
                             <li><a href="user">Logout</a></li>
                         </ul>
                     </li>
+                    -->
                 </ul>
                 <%
                     }

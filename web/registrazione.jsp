@@ -41,8 +41,31 @@
                                                 <td>
                                                     <b>Data di nascita:</b>
                                                 </td>
+                                                <input name="date" value="1994-01-21">
                                                 <td>
-                                                    <input type="text" name="date" maxlength="50" required>          
+                                                    <select class="form-control birth" id="day"></select>
+                                                </td>
+                                                <td>
+                                                    <select class="form-control birth" id="month"></select>
+                                                </td>
+                                                <td>
+                                                    <select class="form-control birth" id="year"></select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>Indirizzo:</b>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="indirizzo" maxlength="50" required>          
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <b>Numero di Telefono:</b>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="num_tel" maxlength="50" required>          
                                                 </td>
                                             </tr>
                                             <tr>

@@ -1,3 +1,4 @@
+/*carpi*/
 .login {
     padding-right: 1%;
 }
@@ -83,3 +84,8 @@
         font-size: 30px;
     }
 }
+
+.birth {
+    border-radius: 0px;
+}
+/*carpi*/
