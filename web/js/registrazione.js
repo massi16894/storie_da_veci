@@ -1,3 +1,7 @@
+var day;
+var month;
+var year;
+
 $(document).ready(function(){
     var pass1 = $("input[name=pass1]");
     var pass2 = $("input[name=pass2]");
@@ -57,4 +61,12 @@ $(document).ready(function(){
         $('#year').append("<option>"+ i +"</option>");
     }
     
+    $('.birth').click(function() {
+        $('.data').empty();
+        day = $('#day').val();
+        month = $('#month').val();
+        year = $('#year').val();
+        $('.data').append('<td class="hdata"><input name="date" value="' + year + '-' + month + '-' + day + '"></td>');
+    });
+        
 });

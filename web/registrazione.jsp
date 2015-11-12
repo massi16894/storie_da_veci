@@ -41,7 +41,6 @@
                                                 <td>
                                                     <b>Data di nascita:</b>
                                                 </td>
-                                                <input name="date" value="1994-01-21">
                                                 <td>
                                                     <select class="form-control birth" id="day"></select>
                                                 </td>
@@ -51,6 +50,7 @@
                                                 <td>
                                                     <select class="form-control birth" id="year"></select>
                                                 </td>
+                                                <td class="data"></td>
                                             </tr>
                                             <tr>
                                                 <td>
