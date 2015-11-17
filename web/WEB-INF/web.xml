@@ -24,6 +24,10 @@
         <servlet-name>user</servlet-name>
         <servlet-class>servlet.user</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>categoria</servlet-name>
+        <servlet-class>servlet.categoria</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DBManager</servlet-name>
         <url-pattern>/DBManager</url-pattern>
@@ -51,6 +55,10 @@
     <servlet-mapping>
         <servlet-name>user</servlet-name>
         <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>categoria</servlet-name>
+        <url-pattern>/categoria</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

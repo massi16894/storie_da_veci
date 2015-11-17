@@ -1,3 +1,5 @@
+<%@page import="java.io.PrintWriter"%>
+<%@page import="db.Categoria"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="db.DBManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -18,7 +20,26 @@
             } 
         %>
         <div class="container-fluid">
-            <div class="row"></div>
+            <div class="row">
+                
+                <%
+                    int num = (int) request.getAttribute("num");
+                    for (int i = 0; i < num; i++) {
+                            String cat = (String) request.getAttribute(Integer.toString(i));
+                %>
+                <span><!-- color="
+                <%
+                           // out.print(cat);
+                %>
+                ">-->
+                <%
+                            out.print(cat);
+                %>
+                </span><br>
+                <%
+                    }
+                %>
+            </div>
         </div>
     </body>
 </html>
