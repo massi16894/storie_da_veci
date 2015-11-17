@@ -29,7 +29,7 @@
                         //Categoria categoria = (Categoria) rs;
                 %>
                 <a href="<%
-                        out.print(rs.getString("nome"));
+                        out.print(rs.getString("url"));
                 %>">
                 <span class="<%
                         out.print(rs.getString("colore"));
