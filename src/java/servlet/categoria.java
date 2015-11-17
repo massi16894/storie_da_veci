@@ -39,14 +39,8 @@ public class categoria extends HttpServlet {
         ResultSet rs;
         rs = manager.getData(sql);
         response.setContentType("text/html");
-        //request.setAttribute("todo", "funziona");
-        int i = 0;
-        while (rs.next()) {
-            request.setAttribute(Integer.toString(i), rs.getString("nome"));
-            i++;
-        }
-        request.setAttribute("num", i);
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.setAttribute("todo", rs);
+        request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

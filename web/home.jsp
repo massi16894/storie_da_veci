@@ -23,19 +23,21 @@
             <div class="row">
                 
                 <%
-                    int num = (int) request.getAttribute("num");
-                    for (int i = 0; i < num; i++) {
-                            String cat = (String) request.getAttribute(Integer.toString(i));
+                    ResultSet rs = (ResultSet) request.getAttribute("todo");
+                    while (rs.next()) {
+                        //user.setId(rs.getString("id_utente"));
+                        //Categoria categoria = (Categoria) rs;
                 %>
-                <span><!-- color="
+                <a href="<%
+                        out.print(rs.getString("nome"));
+                %>">
+                <span class="<%
+                        out.print(rs.getString("colore"));
+                %>">
                 <%
-                           // out.print(cat);
-                %>
-                ">-->
-                <%
-                            out.print(cat);
-                %>
-                </span><br>
+                        out.print(rs.getString("nome"));
+                %></span></a>
+                <br>
                 <%
                     }
                 %>

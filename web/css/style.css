@@ -1,3 +1,23 @@
+/*style categories*/
+.rosso{
+    color: #d9534f;
+}
+.verde{
+    color: #4cae4c;
+}
+.giallo{
+    color: #f5e79e;
+}
+.blu{
+    color: #269abc;
+}
+.marrone{
+    color: #8a6d3b
+}
+.rosa{
+    color: #dca7a7;
+}
+
 /*carpi*/
 .login {
     padding-right: 1%;
