@@ -33,9 +33,16 @@
             <div class="row">
                 
                 <%
+                    int j = 0;
                     while (rs.next()) {
+                        if(j==0){
+                %>
+                <h2><%= rs.getString("nome")%></h2>
+                <%
+                        } j++;
                 %>
                 <span>     
+                    
                     <form method="get" action="post.jsp">
                         <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
                         <button type="submit" class="btn btn-primary img-responsive">
@@ -43,7 +50,6 @@
                         </button>
                     </form>
                             
-                    <%= rs.getString("nome")%><br>
                     <%= rs.getString("cognome")%><br>
                 </span>
                 <br>
