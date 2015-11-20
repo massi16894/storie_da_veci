@@ -32,12 +32,10 @@
             <div class="row">
                 <%
                     while(rs.next()) {
-                        //user.setId(rs.getString("id_utente"));
-                        //Categoria categoria = (Categoria) rs;
                         String id = rs.getString("id_cat");
                 %>
                 <form method="get" action="categoria.jsp">
-                    <input type="hidden" name="id" value="<%=rs.getString("id_cat")%>">
+                    <input type="hidden" name="id_cat" value="<%=rs.getString("id_cat")%>">
                     <button type="submit" class="btn btn-primary img-responsive">
                         <span class="<%= rs.getString("colore")%>">
                             <%= rs.getString("nome")%>

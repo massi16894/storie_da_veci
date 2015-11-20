@@ -1,3 +1,7 @@
+
+ALTER TABLE carpediem.Categoria
+DROP COLUMN url;
+
 alter table carpediem.Categoria
 ADD url varchar(50);
 
@@ -27,3 +31,6 @@ WHERE nome = 'Reduci di Guerra';
 UPDATE carpediem.Categoria
 SET url = 'c-era-una-volta'
 WHERE nome = 'C era una volta';
+
+ALTER TABLE carpediem.Categoria
+DROP COLUMN url;

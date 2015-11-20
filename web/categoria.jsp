@@ -12,6 +12,7 @@
     </head>
     <body>
         <%@include file="navbar.jsp" %>
+        <% String id_cat = request.getParameter("id_cat"); %>
         <%! private DBManager manager; %>
         <%! 
             public void init() throws ServletException {
@@ -22,10 +23,11 @@
         %>
         <%
             String sql = "SELECT * "
-                + "FROM carpediem.Post, carpediem.Categoria "
-                + "WHERE carpediem.Categoria.url = 'ricette-della-nonna' "
-                + "AND carpediem.Post.categoria = carpediem.Categoria.id_cat";
-            ResultSet rs = manager.getData(sql);
+                + "FROM carpediem.Post P, carpediem.Categoria C, carpediem.Utente U "
+                + "WHERE C.id_cat = ? "
+                + "AND P.categoria = C.id_cat "
+                + "AND U.id_utente = P.utente ";
+            ResultSet rs = manager.getData(sql,id_cat);
         %>
         <div class="container-fluid">
             <div class="row">
@@ -33,22 +35,17 @@
                 <%
                     while (rs.next()) {
                 %>
-                <span>
-                    <%= rs.getString("id_post")%>
-                    <%= rs.getString("categoria")%>
-                    <%= rs.getString("utente")%>
-                    <%= rs.getString("testo")%>
-                    <%= rs.getString("media")%>
-                    <%
-                        //out.print(rs.getString("colore"));
-                    /*    ResultSetMetaData rsmd = rs.getMetaData();
-                        out.print(rs.getString("titolo"));
-                        out.print(rsmd.getColumnName(1));
-                        out.print(rsmd.getColumnName(2));
-                        out.print(rsmd.getColumnName(3));                       
-                        out.print(rsmd.getColumnName(4));  */
-
-                %></span>
+                <span>     
+                    <form method="get" action="post.jsp">
+                        <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
+                        <button type="submit" class="btn btn-primary img-responsive">
+                            <%= rs.getString("titolo")%>
+                        </button>
+                    </form>
+                            
+                    <%= rs.getString("nome")%><br>
+                    <%= rs.getString("cognome")%><br>
+                </span>
                 <br>
                 <%
                     }
