@@ -39,7 +39,6 @@
     padding-top: 1%;
     background-image: url(../img/13636.jpg);
     color: black !important;
-    margin-bottom: 5%;
 }
 
 .nav {
@@ -90,10 +89,19 @@
 
 #registrazione table td, #login table td {
     padding: 7px;
+    
 }
 
 #registrazione table td b {
     text-align: left;
+}
+
+
+#registrazione .birth {
+    width: 80px;
+    margin-right: 0px;
+    border-radius: 0px;
+    margin-right: 0px;
 }
 
 .pop-up {
@@ -131,6 +139,7 @@
 .con-cat {
     padding-bottom: 0px;
 }
+
 #login-collapsed, #login-normal{
     margin-right: 10px;
 }
@@ -159,10 +168,6 @@
     #titolo {
         font-size: 30px;
     }
-}
-
-.birth {
-    border-radius: 0px;
 }
 
 .hdata {
