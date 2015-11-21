@@ -8,7 +8,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" id="titolo" href="index.jsp">Storie da Veci</a>
+                <!--<a class="navbar-brand" id="titolo" href="index.jsp">Storie da Veci</a> -->
+                <a class="navbar-brand" href="index.jsp">
+                    <img src="img/logo.png">
+                    <b class="titolo">Storie da Veci</b>
+                </a>
             </div>
 
             <div class="collapse navbar-collapse" id="navbar-main">
@@ -39,17 +43,8 @@
                     } else {
                 %>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="user">Esci</a></li>
-                    <!--
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true">Logged in as <%= user.getNome()+" "+user.getCognome()%> <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="user.jsp">Menu utente</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="user">Logout</a></li>
-                        </ul>
-                    </li>
-                    -->
+                    <li><a href="#" class="logout">Bentornato <%= user.getNome()+" "+user.getCognome()%></a></li>
+                    <li><a href="user" class="logout">Esci</a></li>
                 </ul>
                 <%
                     }

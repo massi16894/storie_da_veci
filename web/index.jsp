@@ -27,25 +27,60 @@
         <%
             String sql = "SELECT * FROM carpediem.Categoria";
             ResultSet rs = manager.getData(sql);
+            
+            String sql2 = "SELECT * FROM carpediem.Utente";
+            ResultSet utente = manager.getData(sql2);
         %>
         <div class="container-fluid">
-            <div class="row">
-                <%
-                    while(rs.next()) {
-                        String id = rs.getString("id_cat");
-                %>
-                <form method="get" action="categoria.jsp">
-                    <input type="hidden" name="id_cat" value="<%=rs.getString("id_cat")%>">
-                    <button type="submit" class="btn btn-primary img-responsive">
-                        <span class="<%= rs.getString("colore")%>">
-                            <%= rs.getString("nome")%>
-                        </span>
-                    </button>
-                </form>
-                <br>
-                <%
-                    }
-                %>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="panel panel1 panel-default">
+                        <div class="row content">
+                            <div class="col-sm-8">
+                                <img src="img/youtube.png">
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="botoni">
+                                    <div class="row">
+                                        <form action=profilo.jsp method=GET>
+                                            <button type="submit" class="btn btn-primary hp" style="margin-bottom: 10px;">Profilo</button>
+                                            <input type=hidden name=id value="ciao">
+                                        </form>
+                                    </div>
+                                    <div class="row">
+                                        <form action=crea.jsp method=GET>
+                                            <button type="submit" class="btn btn-primary hp">Crea Post</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="panel panel1 panel-default con-cat">
+                        <div class="row content">
+                        <%
+                            while(rs.next()) {
+                                String id = rs.getString("id_cat");
+                        %>
+                        <div class="col-md-4 cat">
+                            <form method="get" action="categoria.jsp">
+                            <input type="hidden" name="id_cat" value="<%=rs.getString("id_cat")%>">
+                            <button type="submit" class="btn <%= rs.getString("colore")%> btn-cat">
+                                <span>
+                                    <%= rs.getString("nome")%>
+                                </span>
+                            </button>
+                            </form>
+                        </div>
+                        <%
+                            }
+                        %>
+                    </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
