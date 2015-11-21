@@ -11,4 +11,6 @@ values 	('Fai-da-te', 'rosso'),
 		('C era una volta', 'rosa');
 		
 insert into carpediem.Post (titolo, categoria, utente, testo, media)
-values ('Le Tagliatelle di Nonna Pina', 3, 2, 'Son molto più efficaci di ogni vitamina', 'https://www.youtube.com/watch?v=HAzbZbjztbc');
+values ('c era una volta in america', 6, 1, 'c era una volta in america colonna sonora', 'https://www.youtube.com/watch?v=nbFfHDOXDkY'),
+	   ('Il caffe della Peppina', 3, 1, 'Non si beve alla mattina ne col latte ne col te', 'https://www.youtube.com/watch?v=-xL2Y2HKEI8'),
+       ('Le Tagliatelle di Nonna Pina', 3, 2, 'Son molto più efficaci di ogni vitamina', 'https://www.youtube.com/watch?v=HAzbZbjztbc');
