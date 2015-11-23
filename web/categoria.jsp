@@ -29,7 +29,7 @@
                 + "AND U.id_utente = P.utente ";
             ResultSet rs = manager.getData(sql,id_cat);
         %>
-        <div class="container-fluid">
+        <div class="container-fluid" id="pagina-categoria">
             <div class="row">
                 
                 
@@ -46,18 +46,28 @@
                         }
                         j++;
                 %>
-
-                        <!--<div class="row content">-->
                             <div class="panel panel1 panel-default panel-chiaro">
+                                
                                 <div class="row content">   
+                                
+                                    <div class="col-md-3"><%= rs.getString("cognome")%></div>
+                                    <div class="col-md-3">
+                                        <a href="<%= rs.getString("media")%>" target="blank">
+                                            <%= rs.getString("media")%>
+                                        </a>                                        
+                                    </div>
+                                    <div class="col-md-3">
                                                 <form method="get" action="post.jsp">
                                                     <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
                                                     <button type="submit" class="btn btn-primary img-responsive hp">
                 <%= rs.getString("titolo")%>
                                                     </button>
-                                                </form><%= rs.getString("cognome")%>
-                                                </div></div><!--</div>-->
-                <%
+                                                </form>
+                                    </div>
+                                    <div class="col-md-3"><%= rs.getString("testo")%></div>
+                                </div>
+                            </div>
+                            <%
                     }
 
                 %>

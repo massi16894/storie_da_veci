@@ -1,5 +1,9 @@
 /*style categories*/
-.row > .panel-chiaro{
+#pagina-categoria .hp{
+    height: 100%;
+    font-size: 20px;
+}
+.row .panel-chiaro{
     background-color: #f1f1f1;
     border-color: #fff;
     box-shadow:  0 1px 1px #e8e8e6, 0 -1px 1px #e8e8e6;
