@@ -69,7 +69,7 @@
                             <div class="col-md-4 cat">
                                 <form method="get" action="categoria.jsp">
                                 <input type="hidden" name="id_cat" value="<%=rs.getString("id_cat")%>">
-                                <button type="submit" class="btn <%= rs.getString("colore")%> btn-cat">
+                                <button type="submit" class="btn <%= rs.getString("colore")%> btn-cat truncate">
                                     <span>
                                         <%= rs.getString("nome")%>
                                     </span>

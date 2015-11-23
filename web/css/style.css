@@ -194,6 +194,11 @@
         font-size: 30px;
     }
 }
+@media screen and (max-width: 1160px) and (min-width: 896px) {
+    .navbar-brand img {
+        width: 15%;
+    }
+}
 
 @media screen and (max-width: 895px) and (min-width: 768px) {      
     .navbar-brand img {
@@ -201,16 +206,29 @@
     }
 }
 
-@media screen and (max-width: 895px) {    
-    .navbar-brand {
-        font-size: 30px;
-        width: 350px;
-}
-
 @media screen and (max-width: 767px) {
     .navbar-brand img {
         width: 25%;
     }
+    
+    .botoni {
+        padding-left: 15px;
+    }
+}
+
+.truncate {
+    width: 100%;
+    min-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+@media screen and (max-width: 910px) {    
+    .navbar-brand {
+        font-size: 30px;
+        width: 350px;
 }
 
 .hdata {
