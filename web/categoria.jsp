@@ -32,30 +32,36 @@
         <div class="container-fluid">
             <div class="row">
                 
+                
+                <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
                 <%
                     int j = 0;
                     while (rs.next()) {
                         if(j==0){
                 %>
-                <h2><%= rs.getString("nome")%></h2>
+                        <h2><%= rs.getString("nome")%></h2>
+                        <hr>
                 <%
-                        } j++;
+                        }
+                        j++;
                 %>
-                <span>     
-                    
-                    <form method="get" action="post.jsp">
-                        <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
-                        <button type="submit" class="btn btn-primary img-responsive">
-                            <%= rs.getString("titolo")%>
-                        </button>
-                    </form>
-                            
-                    <%= rs.getString("cognome")%><br>
-                </span>
-                <br>
+
+                        <!--<div class="row content">-->
+                            <div class="panel panel1 panel-default panel-chiaro">
+                                <div class="row content">   
+                                                <form method="get" action="post.jsp">
+                                                    <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
+                                                    <button type="submit" class="btn btn-primary img-responsive hp">
+                <%= rs.getString("titolo")%>
+                                                    </button>
+                                                </form><%= rs.getString("cognome")%>
+                                                </div></div><!--</div>-->
                 <%
                     }
+
                 %>
+                    </div></div></div></div>
             </div>
         </div>
     </body>

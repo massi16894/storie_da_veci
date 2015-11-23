@@ -36,7 +36,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
                     <div class="row content">
-                        <div class="panel panel1 panel-default">
+                        <div class="panel-chiaro panel panel1 panel-default">
                             <div class="row content">
                                 <div class="col-sm-8">
                                     <img src="img/youtube.png">
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div class="row content">
-                        <div class="panel panel1 panel-default con-cat">
+                        <div class="panel-chiaro panel panel1 panel-default con-cat">
                             <div class="row content">
                             <%
                                 while(rs.next()) {
