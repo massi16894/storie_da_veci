@@ -56,6 +56,14 @@
     margin-top: -25px;
 }
 
+#login-collapsed {
+    padding-bottom: 0px;
+}
+
+#login-collapsed a {
+    color: black !important;
+}
+
 .titolo {
     font-family: cursive;
 }
@@ -98,11 +106,28 @@
 
 
 #registrazione .birth {
-    width: 80px;
     margin-right: 0px;
     border-radius: 0px;
     margin-right: 0px;
+    float: left;;
 }
+
+#registrazione input {
+    width: 210px;
+}
+
+#day, #month {
+    width: 65px;
+}
+
+#year {
+    width: 80px;
+}
+
+.date {
+    padding-left: 10px;
+}
+
 
 .pop-up {
     display: none;
@@ -167,6 +192,24 @@
 @media screen and (max-width: 910px) and (min-width: 400px) {
     #titolo {
         font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 895px) and (min-width: 768px) {      
+    .navbar-brand img {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 895px) {    
+    .navbar-brand {
+        font-size: 30px;
+        width: 350px;
+}
+
+@media screen and (max-width: 767px) {
+    .navbar-brand img {
+        width: 25%;
     }
 }
 

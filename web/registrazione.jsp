@@ -37,17 +37,13 @@
                                                     <input type="text" name="cognome" maxlength="50" required>          
                                                 </td>
                                             </tr>
-                                            <tr  class="date">
+                                            <tr>
                                                 <td>
                                                     <b>Data di nascita:</b>
                                                 </td>
-                                                <td>
+                                                <td  class="date">
                                                     <select class="form-control birth" id="day"></select>
-                                                </td>
-                                                <td>
                                                     <select class="form-control birth" id="month"></select>
-                                                </td>
-                                                <td>
                                                     <select class="form-control birth" id="year"></select>
                                                 </td>
                                                 <td class="data"></td>
