@@ -59,7 +59,7 @@
                                     <div class="col-md-3">
                                                 <form method="get" action="post.jsp">
                                                     <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
-                                                    <button type="submit" class="btn btn-primary img-responsive hp">
+                                                    <button type="submit" class="btn btn-primary img-responsive hp truncate">
                 <%= rs.getString("titolo")%>
                                                     </button>
                                                 </form>
@@ -71,7 +71,7 @@
                     }
 
                 %>
-                    </div></div></div></div>
+                    </div>
             </div>
         </div>
     </body>
