@@ -1,27 +1,71 @@
 /*style categories*/
-.rosso{
-    background-color: #d9534f;
+#pagina-categoria .hp{
+    height: 100%;
+    font-size: 20px;
 }
-.verde{
-    background-color:  #4cae4c;
+.row .panel-chiaro{
+    background-color: #f1f1f1;
+    border-color: #fff;
+    box-shadow:  0 1px 1px #e8e8e6, 0 -1px 1px #e8e8e6;
 }
-.giallo{
-    background-color:  #f5e79e;
+
+.ara{
+    background-color: #b25900;
+    background-image: linear-gradient(to bottom,#ff8000 0,#b25900 100%);
+    background-repeat: repeat-x;
+    border-color: #b25900;
+}
+.vio{
+    background-color: #660066;
+    background-image: linear-gradient(to bottom,#d24dff 0,#660066 100%);
+    background-repeat: repeat-x;
+    border-color: #660066;
 }
 .blu{
-    background-color:  #269abc;
+    background-color: #396c39;
+    background-image: linear-gradient(to bottom,#60b560 0,#396c39 100%);
+    background-repeat: repeat-x;
+    border-color: #396c39;
 }
-.marrone{
-    background-color:  #8a6d3b
+.ros{
+    background-color: #8c2300;
+    background-image: linear-gradient(to bottom,#e0473f 0,#8c2300 100%);
+    background-repeat: repeat-x;
+    border-color: #8c2300;
 }
-.rosa{
-    background-color:  #dca7a7;
+.ver{
+    background-color: #758b40;
+    background-image: linear-gradient(to bottom,#a8c56b 0,#758b40 100%);
+    background-repeat: repeat-x;
+    border-color: #758b40;
+}
+.azz{
+    background-color: #006dd9;
+    background-image: linear-gradient(to bottom,#61d2d2 0,#006dd9 100%);
+    background-repeat: repeat-x;
+    border-color: #006dd9;
 }
 
 .btn-cat {
     width: 100%;
     height: 150px;
     font-size: 25px;
+    color: #fff;
+}
+
+.registrazione{
+    margin-top: 5px;
+}
+.registrazione > a{
+    color: #494942;
+    text-decoration: none;
+    background: wheat;
+    background: beige;
+    background-color: rgba(245,245,220, 0.7);
+    padding: 2px;
+    margin-top: 10px;
+    border: 1px solid #c4b18f;
+    text-decoration: underline;
 }
 
 /*carpi*/
