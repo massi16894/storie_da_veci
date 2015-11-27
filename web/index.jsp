@@ -50,7 +50,7 @@
                                             </form>
                                         </div>
                                         <div class="row">
-                                            <form action=crea.jsp method=GET>
+                                            <form action=creaPost.jsp method=GET>
                                                 <button type="submit" class="btn btn-primary hp">Crea Post</button>
                                             </form>
                                         </div>
