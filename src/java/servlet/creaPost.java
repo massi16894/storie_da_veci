@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class registrazione extends HttpServlet {
+public class creaPost extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,17 +29,14 @@ public class registrazione extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-        String nome = request.getParameter("nome");
-        String cognome = request.getParameter("cognome");
-        String email = request.getParameter("email");
-        String password = request.getParameter("pass1");
-        String date = request.getParameter("date");
-        String telefono = request.getParameter("num_tel");
-        String indirizzo = request.getParameter("indirizzo");
+        String categoria = request.getParameter("categoria");
+        String titolo = request.getParameter("titolo");
+        String testo = request.getParameter("testo");
         DBManager manager = (DBManager)super.getServletContext().getAttribute("dbmanager"); 
-        String sql = "INSERT INTO carpediem.Utente (email, password, data, nome, cognome, telefono, indirizzo, path_foto) values (?, ?, ?, ?, ?, ?, ?, ?)";
-        manager.setData(sql, email, password, date, nome, cognome, telefono, indirizzo, null);
-        response.sendRedirect("reg_ok.jsp");
+        String sql = "INSERT INTO carpediem.Post (titolo, categoria, utente, testo, media) values (?, ?, ?, ?, ?)";
+        manager.setData(sql, titolo, categoria, "1", testo, null);
+        System.out.println(categoria + "\n" + titolo + "\n" + "\n" + testo);
+        response.sendRedirect("creaPost_ok.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -57,7 +54,7 @@ public class registrazione extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(registrazione.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(creaPost.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -75,7 +72,7 @@ public class registrazione extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(registrazione.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(creaPost.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

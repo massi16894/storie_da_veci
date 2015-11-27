@@ -46,7 +46,9 @@
                                                     <select class="form-control birth" id="month"></select>
                                                     <select class="form-control birth" id="year"></select>
                                                 </td>
-                                                <td class="data"></td>
+                                                <td class="data">
+                                                    <input name="date" value="1900-1-1">
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>

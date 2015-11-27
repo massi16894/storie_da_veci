@@ -1,11 +1,16 @@
-var day;
-var month;
-var year;
+var day = 1;
+var month = 1;
+var year = 1900;
+var id_cat = 1;
 
 $(document).ready(function(){
     var pass1 = $("input[name=pass1]");
     var pass2 = $("input[name=pass2]");
     var email_reg = $("#registrazione input[name=email]");
+    
+    
+    $('.cat').hide();
+    $('.data').hide();
     
     $("form").trigger("reset");
     setInterval(check,100);
@@ -43,7 +48,7 @@ $(document).ready(function(){
         }
     });
     
-    $("form").submit(function(event){
+    $("#registrazione").submit(function(event){
         if(!($("#email").hasClass("invisibile")&&$("#pass").hasClass("invisibile"))){
             event.preventDefault();
         }
@@ -66,7 +71,13 @@ $(document).ready(function(){
         day = $('#day').val();
         month = $('#month').val();
         year = $('#year').val();
-        $('.data').append('<td class="hdata"><input name="date" value="' + year + '-' + month + '-' + day + '"></td>');
+        $('.data').append('<input name="date" value="' + year + '-' + month + '-' + day + '">');
     });
-        
+    
+    $('.categoria').click(function() {
+        $('.cat').empty();
+        id_cat = $(this).children(':selected').attr('id');
+        $('.cat').append('<input type="text" name="categoria" value="' + id_cat + '">');
+    });
+    
 });
