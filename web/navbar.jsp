@@ -42,7 +42,7 @@
                     } else {
                 %>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" class="logout">Bentornato <%= user.getNome()+" "+user.getCognome()%></a></li>
+                    <li><a href="user.jsp" class="logout">Bentornato <%= user.getNome()+" "+user.getCognome()%></a></li>
                     <li><a href="user" class="logout">Esci</a></li>
                 </ul>
                 <%
