@@ -1,5 +1,4 @@
 <%@page import="java.io.PrintWriter"%>
-<%@page import="db.Categoria"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="db.DBManager"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -27,9 +26,6 @@
         <%
             String sql = "SELECT * FROM carpediem.Categoria";
             ResultSet rs = manager.getData(sql);
-            
-            String sql2 = "SELECT * FROM carpediem.Utente";
-            ResultSet utente = manager.getData(sql2);
         %>
         <div class="container-fluid">
             <div class="row">
@@ -44,15 +40,26 @@
                                 <div class="col-sm-4">
                                     <div class="botoni">
                                         <div class="row">
-                                            <form action=profilo.jsp method=GET>
-                                                <button type="submit" class="btn btn-primary hp" style="margin-bottom: 10px;">Profilo</button>
-                                                <input type=hidden name=id value="ciao">
-                                            </form>
+                                                <% if (user==null) { %>
+                                                <form action=login.jsp method=GET>
+                                                    <button type="submit" class="btn btn-primary hp" style="margin-bottom: 10px;">Profilo</button>
+                                                </form>
+                                                <% } else { %>
+                                                <form action=user.jsp method=GET>
+                                                    <button type="submit" class="btn btn-primary hp">Profilo</button>
+                                                </form>
+                                                <% } %>
                                         </div>
                                         <div class="row">
-                                            <form action=creaPost.jsp method=GET>
-                                                <button type="submit" class="btn btn-primary hp">Crea Post</button>
-                                            </form>
+                                                <% if (user==null) { %>
+                                                <form action=login.jsp method=GET>
+                                                    <button type="submit" class="btn btn-primary hp">Crea Post</button>
+                                                </form>
+                                                <% } else { %>
+                                                <form action=creaPost.jsp method=GET>
+                                                    <button type="submit" class="btn btn-primary hp" value="<%=user.getId()%>">Crea Post</button>
+                                                </form>
+                                                <% } %>
                                         </div>
                                     </div>
                                 </div>

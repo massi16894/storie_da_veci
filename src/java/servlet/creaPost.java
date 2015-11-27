@@ -32,10 +32,10 @@ public class creaPost extends HttpServlet {
         String categoria = request.getParameter("categoria");
         String titolo = request.getParameter("titolo");
         String testo = request.getParameter("testo");
+        String utente = request.getParameter("utente");
         DBManager manager = (DBManager)super.getServletContext().getAttribute("dbmanager"); 
         String sql = "INSERT INTO carpediem.Post (titolo, categoria, utente, testo, media) values (?, ?, ?, ?, ?)";
-        manager.setData(sql, titolo, categoria, "1", testo, null);
-        System.out.println(categoria + "\n" + titolo + "\n" + "\n" + testo);
+        manager.setData(sql, titolo, categoria, utente, testo, null);
         response.sendRedirect("creaPost_ok.jsp");
     }
 

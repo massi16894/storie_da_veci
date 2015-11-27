@@ -8,10 +8,6 @@ $(document).ready(function(){
     var pass2 = $("input[name=pass2]");
     var email_reg = $("#registrazione input[name=email]");
     
-    
-    $('.cat').hide();
-    $('.data').hide();
-    
     $("form").trigger("reset");
     setInterval(check,100);
     
@@ -71,13 +67,13 @@ $(document).ready(function(){
         day = $('#day').val();
         month = $('#month').val();
         year = $('#year').val();
-        $('.data').append('<input name="date" value="' + year + '-' + month + '-' + day + '">');
+        $('.data').append('<input type="hidden" name="date" value="' + year + '-' + month + '-' + day + '">');
     });
     
     $('.categoria').click(function() {
         $('.cat').empty();
         id_cat = $(this).children(':selected').attr('id');
-        $('.cat').append('<input type="text" name="categoria" value="' + id_cat + '">');
+        $('.cat').append('<input type="hidden" name="categoria" value="' + id_cat + '">');
     });
     
 });

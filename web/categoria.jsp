@@ -1,6 +1,4 @@
-<%@page import="java.sql.ResultSetMetaData"%>
 <%@page import="java.io.PrintWriter"%>
-<%@page import="db.Categoria"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="db.DBManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -51,11 +49,20 @@
                                 <div class="row content">   
                                 
                                     <div class="col-md-3"><%= rs.getString("cognome")%></div>
+                                    <!--
                                     <div class="col-md-3">
                                         <a href="<%= rs.getString("media")%>" target="blank">
                                             <%= rs.getString("media")%>
                                         </a>                                        
                                     </div>
+                                    -->
+                                    <div class="col-md-3">
+                                        <% if(rs.getString("media")==null) { %>
+                                            solo testo
+                                        <% } else { %>
+                                            <a href="<%= rs.getString("media")%>" target="blank">Contenuto multimediale</a>
+                                        <% } %>
+                                    </div>    
                                     <div class="col-md-3">
                                                 <form method="get" action="post.jsp">
                                                     <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">

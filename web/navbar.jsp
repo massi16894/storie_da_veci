@@ -8,7 +8,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!--<a class="navbar-brand" id="titolo" href="index.jsp">Storie da Veci</a> -->
                 <a class="navbar-brand" href="index.jsp">
                     <img src="img/logo.png">
                     <b class="titolo">Storie da Veci</b>
@@ -43,7 +42,7 @@
                     } else {
                 %>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" class="logout">Bentornato <%= user.getNome()+" "+user.getCognome()%></a></li>
+                    <li><a href="user.jsp" class="logout">Bentornato <%= user.getNome()+" "+user.getCognome()%></a></li>
                     <li><a href="user" class="logout">Esci</a></li>
                 </ul>
                 <%
