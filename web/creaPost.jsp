@@ -19,7 +19,6 @@
             public void init() throws ServletException {
                 // inizializza il DBManager dagli attributi di Application
                 this.manager = (DBManager)super.getServletContext().getAttribute("dbmanager");
-                //System.out.println("DBManager attivato\n");
             } 
         %>
         <%
@@ -57,7 +56,7 @@
                                                     </select>
                                                 </td>
                                                 <td class="cat">
-                                                    <input type="text" name="categoria" value="1">
+                                                    <input type="hidden" name="categoria" value="1">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -74,6 +73,11 @@
                                                 </td>
                                                 <td>
                                                     <textarea rows="4" cols="50" name="testo" required></textarea>          
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="hidden"name="utente" value="<%=user.getId()%>">          
                                                 </td>
                                             </tr>
                                             <tr>
