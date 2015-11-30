@@ -20,6 +20,10 @@
         <servlet-class>servlet.creaPost</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>servlet.delete</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>registrazione</servlet-name>
         <servlet-class>servlet.registrazione</servlet-class>
     </servlet>
@@ -50,6 +54,10 @@
     <servlet-mapping>
         <servlet-name>creaPost</servlet-name>
         <url-pattern>/creaPost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/delete</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>registrazione</servlet-name>

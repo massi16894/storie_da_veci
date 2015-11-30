@@ -46,7 +46,7 @@
         <%--Dati utente--%>
         <%
             String sql1 = "SELECT * FROM carpediem.Utente WHERE id_utente = ?";
-            ResultSet info = manager.getData(sql1,id_utente);
+            ResultSet info = manager.getData(sql1, id_utente);
             info.next();
         %>
         <%--Post utente--%>
@@ -57,7 +57,7 @@
                         +" ON U.id_utente = P.utente"
                         +" WHERE U.id_utente = ?";
             
-            ResultSet post = manager.getData(sql2,id_utente);
+            ResultSet post = manager.getData(sql2, id_utente);
             
         %>
         <%--Post utente--%>
@@ -70,7 +70,7 @@
                         +" ON C.id_cat = P.categoria"
                         +" WHERE U.id_utente = ?";
             
-            ResultSet cate = manager.getData(sql3,id_utente);   
+            ResultSet cate = manager.getData(sql3, id_utente);   
         %>
         
         <div class="container-fluid">
@@ -136,14 +136,20 @@
                                         <%=post.getString("testo")%>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-default" aria-label="Left Align">
-                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                        </button>
+                                        <form method="GET" action="">
+                                            <button type="submit" class="btn btn-default" aria-label="Left Align">
+                                                <input type="hidden" name="id_post" value="<%=post.getString("id_post")%>">
+                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                            </button>
+                                        </form>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-default" aria-label="Left Align">
-                                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                        </button>
+                                        <form method="GET" action="delete">
+                                            <button type="submit" class="btn btn-default" aria-label="Left Align">
+                                                <input type="hidden" name="id_post" value="<%=post.getString("id_post")%>">
+                                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                                 <%}%>
