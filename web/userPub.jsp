@@ -19,6 +19,7 @@
 <html>
     <head>
         <%@include file="head.html" %>
+        <% String user_id = request.getParameter("id"); %>
         <title>userPub</title>
     </head>
     <body>
@@ -34,7 +35,7 @@
         <%--Dati utente--%>
         <%
             String sql1 = "SELECT * FROM carpediem.Utente WHERE id_utente = ?";
-            ResultSet info = manager.getData(sql1, "1");
+            ResultSet info = manager.getData(sql1, user_id);
             info.next();
         %>
         <%--Post utente--%>
@@ -45,7 +46,7 @@
                         +" ON U.id_utente = P.utente"
                         +" WHERE U.id_utente = ?";
             
-            ResultSet post = manager.getData(sql2, "2");
+            ResultSet post = manager.getData(sql2, user_id);
             
         %>
         <%--Post utente--%>
@@ -58,7 +59,7 @@
                         +" ON C.id_cat = P.categoria"
                         +" WHERE U.id_utente = ?";
             
-            ResultSet cate = manager.getData(sql3, "2");   
+            ResultSet cate = manager.getData(sql3, user_id);   
         %>
         
         <div class="container-fluid">
@@ -99,7 +100,7 @@
                         </div>
                         <div class="panel1 panel-body">
                             <!--Post-->
-                            <table style="margin-left: auto; margin-right: auto">
+                            <table style="margin-left: auto; margin-right: auto;">
                                 <tr>
                                     <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
                                         <b>Nome</b>

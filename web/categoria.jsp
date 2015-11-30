@@ -25,7 +25,7 @@
                 + "WHERE C.id_cat = ? "
                 + "AND P.categoria = C.id_cat "
                 + "AND U.id_utente = P.utente ";
-            ResultSet rs = manager.getData(sql,id_cat);
+            ResultSet rs = manager.getData(sql, id_cat);
         %>
         <div class="container-fluid" id="pagina-categoria">
             <div class="row">
@@ -47,15 +47,13 @@
                             <div class="panel panel1 panel-default panel-chiaro">
                                 
                                 <div class="row content">   
-                                
-                                    <div class="col-md-3"><%= rs.getString("cognome")%></div>
-                                    <!--
+                                    
                                     <div class="col-md-3">
-                                        <a href="<%= rs.getString("media")%>" target="blank">
-                                            <%= rs.getString("media")%>
-                                        </a>                                        
+                                        <form method="post" action="userPub.jsp">
+                                            <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
+                                            <input type="submit" value="<%= rs.getString("cognome")%>">
+                                        </form>
                                     </div>
-                                    -->
                                     <div class="col-md-3">
                                         <% if(rs.getString("media")==null) { %>
                                             solo testo
@@ -67,7 +65,7 @@
                                                 <form method="get" action="post.jsp">
                                                     <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
                                                     <button type="submit" class="btn btn-primary img-responsive hp truncate">
-                <%= rs.getString("titolo")%>
+                                                        <%= rs.getString("titolo")%>
                                                     </button>
                                                 </form>
                                     </div>
