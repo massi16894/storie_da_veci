@@ -45,7 +45,7 @@
                                                     <button type="submit" class="btn btn-primary hp" style="margin-bottom: 10px;">Profilo</button>
                                                 </form>
                                                 <% } else { %>
-                                                <form action=user.jsp method=GET>
+                                                <form action=userPriv.jsp method=GET>
                                                     <button type="submit" class="btn btn-primary hp">Profilo</button>
                                                 </form>
                                                 <% } %>

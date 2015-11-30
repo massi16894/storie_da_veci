@@ -112,36 +112,36 @@
                         </div>
                         <div class="panel1 panel-body">
                             <!--Post-->
-                            <table style="margin-left: auto; margin-right: auto">
+                            <table style="margin-left: auto; margin-right: auto" class="table">
                                 <tr>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <b>Nome</b>
                                     </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <b>Categoria</b>
                                     </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td colspan="3">
                                         <b>Descrizione</b>
                                     </td>
 
                                 </tr>
                                 <% while(post.next() && cate.next()){%>
                                 <tr>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <%=post.getString("titolo")%>
                                     </td> 
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <%=cate.getString("nome")%>
                                     </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <%=post.getString("testo")%>
                                     </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <button type="button" class="btn btn-default" aria-label="Left Align">
                                             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                         </button>
                                     </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <button type="button" class="btn btn-default" aria-label="Left Align">
                                             <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                         </button>
