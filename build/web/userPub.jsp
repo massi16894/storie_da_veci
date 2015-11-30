@@ -7,7 +7,6 @@
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.io.PrintWriter"%>
-<%@page import="db.Categoria"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="db.DBManager"%>
 <%@page import="java.sql.PreparedStatement"%>
