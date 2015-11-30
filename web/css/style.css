@@ -1,4 +1,8 @@
 /*style categories*/
+body {
+    background-image: url(../img/fiori1057.jpg);
+}
+
 #pagina-categoria .hp{
     height: 100%;
     font-size: 20px;
@@ -15,36 +19,42 @@
     background-image: linear-gradient(to bottom,#ff8000 0,#b25900 100%);
     background-repeat: repeat-x;
     border-color: #b25900;
+    color: white;
 }
 .vio{
     background-color: #660066;
     background-image: linear-gradient(to bottom,#d24dff 0,#660066 100%);
     background-repeat: repeat-x;
     border-color: #660066;
+    color: white;
 }
 .blu{
     background-color: #396c39;
     background-image: linear-gradient(to bottom,#60b560 0,#396c39 100%);
     background-repeat: repeat-x;
     border-color: #396c39;
+    color: white;
 }
 .ros{
     background-color: #8c2300;
     background-image: linear-gradient(to bottom,#e0473f 0,#8c2300 100%);
     background-repeat: repeat-x;
     border-color: #8c2300;
+    color: white;
 }
 .ver{
     background-color: #758b40;
     background-image: linear-gradient(to bottom,#a8c56b 0,#758b40 100%);
     background-repeat: repeat-x;
     border-color: #758b40;
+    color: white;
 }
 .azz{
     background-color: #006dd9;
     background-image: linear-gradient(to bottom,#61d2d2 0,#006dd9 100%);
     background-repeat: repeat-x;
     border-color: #006dd9;
+    color: white;
 }
 
 .btn-cat {
@@ -57,6 +67,7 @@
 .registrazione{
     margin-top: 5px;
 }
+
 .registrazione > a{
     color: #494942;
     text-decoration: none;

@@ -38,7 +38,7 @@
                     while (rs.next()) {
                         if(j==0){
                 %>
-                        <h2><%= rs.getString("nome")%></h2>
+                        <h2 class="<%= rs.getString("colore")%>"><%= rs.getString("nome")%></h2>
                         <hr>
                 <%
                         }
