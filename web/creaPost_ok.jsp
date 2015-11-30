@@ -1,9 +1,15 @@
+<%-- 
+    Document   : creaPost_ok
+    Created on : 22-nov-2015, 8.12.06
+    Author     : Berta
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <%@include file="head.html" %>
-        <title> Registrazione effettuata con successo </title>
+        <title> Creazione Post effettuata con successo </title>
     </head>
         
     
@@ -16,12 +22,12 @@
                 <div class="col-sm-10 col-xs-12">
                     <div class="panel-chiaro panel panel1 panel-default">
                         <div class="panel1 panel-heading">
-                            Registrazione
+                            Creazione Post
                         </div>
                         <div class="row">
                             <div class="col-md-12 text-center">
                                 <p>
-                                    La informiamo che la sua registrazione è avvenuta con successo.
+                                    La informiamo che la creazione del suo post è avvenuta con successo.
                                 </p>
                             </div>
                         </div>

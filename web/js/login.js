@@ -42,12 +42,10 @@ $(document).ready(function(){
             }
         });
     });
-    
-    cont();
-});
+ });
 
 $("#login input").focusin($("#login-error").addClass("invisibile"));
-
+/*
 function sendPassword(){
     $.ajax({
         type: "POST",
@@ -63,29 +61,4 @@ function sendPassword(){
             }
         }
     });
-}
-
-function start(t){
-    $.ajax({
-        type: "POST",
-        url: "script_spettacoli",
-        data: {t: t}
-    });
-    console.log("SCRIPT AVVIATO!");
-}
-
-function cont(){
-    $.ajax({
-        type: "POST",
-        url: "script_spettacoli"
-    });
-}
-
-function stop(){
-    $.ajax({
-        type: "POST",
-        url: "script_spettacoli",
-        data: {stop: true}
-    });
-    console.log("SCRIPT FERMATO!");
-}
+}*/

@@ -54,7 +54,8 @@ public class user extends HttpServlet {
             user = null;
         }
         sess.setAttribute("utente", user);
-        response.sendRedirect(request.getHeader("Referer"));
+        //response.sendRedirect(request.getHeader("Referer"));
+        response.sendRedirect("login.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
