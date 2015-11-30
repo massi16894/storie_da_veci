@@ -3,14 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/carpediem/storie_da_veci/web/css/style.css</file>
-            <file>file:/home/carpediem/storie_da_veci/src/java/servlet/user.java</file>
-            <file>file:/home/carpediem/storie_da_veci/web/categoria.jsp</file>
-            <file>file:/home/carpediem/storie_da_veci/web/index.jsp</file>
-            <file>file:/home/carpediem/storie_da_veci/web/login.jsp</file>
-            <file>file:/home/carpediem/storie_da_veci/web/creaPost.jsp</file>
-            <file>file:/home/carpediem/storie_da_veci/web/userPriv.jsp</file>
-            <file>file:/home/carpediem/storie_da_veci/src/java/servlet/creaPost.java</file>
+            <file>file:/C:/Users/Berta/Documents/IngSoft_2/Progetto/storie_da_veci/src/java/db/Utente.java</file>
+            <file>file:/C:/Users/Berta/Documents/IngSoft_2/Progetto/storie_da_veci/src/java/db/DBManager.java</file>
         </group>
     </open-files>
 </project-private>
