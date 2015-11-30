@@ -36,7 +36,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
                     <div class="row content">
-                        <div class="panel panel1 panel-default">
+                        <div class="panel-chiaro panel panel1 panel-default">
                             <div class="row content">
                                 <div class="col-sm-8">
                                     <img src="img/youtube.png">
@@ -44,10 +44,22 @@
                                 <div class="col-sm-4">
                                     <div class="botoni">
                                         <div class="row">
-                                            <form action=profilo.jsp method=GET>
+                                            <%
+                                                HttpSession ses = request.getSession();
+                                                Utente users = null;
+                                                users = (Utente)sess.getAttribute("utente");
+                                                if(users==null){
+                                            %>
+                                            <form action="login.jsp" method=GET>
                                                 <button type="submit" class="btn btn-primary hp" style="margin-bottom: 10px;">Profilo</button>
                                                 <input type=hidden name=id value="ciao">
                                             </form>
+                                            <% } else { %>
+                                                <form action="userPriv.jsp" method=GET>
+                                                <button type="submit" class="btn btn-primary hp" style="margin-bottom: 10px;">Profilo</button>
+                                                <input type=hidden name=id value="ciao">
+                                            </form>
+                                             <% } %>
                                         </div>
                                         <div class="row">
                                             <form action=crea.jsp method=GET>
@@ -60,7 +72,7 @@
                         </div>
                     </div>
                     <div class="row content">
-                        <div class="panel panel1 panel-default con-cat">
+                        <div class="panel-chiaro panel panel1 panel-default con-cat">
                             <div class="row content">
                             <%
                                 while(rs.next()) {

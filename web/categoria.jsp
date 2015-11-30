@@ -29,33 +29,49 @@
                 + "AND U.id_utente = P.utente ";
             ResultSet rs = manager.getData(sql,id_cat);
         %>
-        <div class="container-fluid">
+        <div class="container-fluid" id="pagina-categoria">
             <div class="row">
                 
+                
+                <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
                 <%
                     int j = 0;
                     while (rs.next()) {
                         if(j==0){
                 %>
-                <h2><%= rs.getString("nome")%></h2>
+                        <h2><%= rs.getString("nome")%></h2>
+                        <hr>
                 <%
-                        } j++;
+                        }
+                        j++;
                 %>
-                <span>     
-                    
-                    <form method="get" action="post.jsp">
-                        <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
-                        <button type="submit" class="btn btn-primary img-responsive">
-                            <%= rs.getString("titolo")%>
-                        </button>
-                    </form>
-                            
-                    <%= rs.getString("cognome")%><br>
-                </span>
-                <br>
-                <%
+                            <div class="panel panel1 panel-default panel-chiaro">
+                                
+                                <div class="row content">   
+                                
+                                    <div class="col-md-3"><%= rs.getString("cognome")%></div>
+                                    <div class="col-md-3">
+                                        <a href="<%= rs.getString("media")%>" target="blank">
+                                            <%= rs.getString("media")%>
+                                        </a>                                        
+                                    </div>
+                                    <div class="col-md-3">
+                                                <form method="get" action="post.jsp">
+                                                    <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
+                                                    <button type="submit" class="btn btn-primary img-responsive hp truncate">
+                <%= rs.getString("titolo")%>
+                                                    </button>
+                                                </form>
+                                    </div>
+                                    <div class="col-md-3"><%= rs.getString("testo")%></div>
+                                </div>
+                            </div>
+                            <%
                     }
+
                 %>
+                    </div>
             </div>
         </div>
     </body>

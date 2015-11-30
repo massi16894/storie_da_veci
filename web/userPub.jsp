@@ -1,6 +1,6 @@
 <%-- 
-    Document   : userPriv
-    Created on : 25-nov-2015, 16.02.58
+    Document   : user
+    Created on : 24-nov-2015, 11.51.18
     Author     : Massimiliano
 --%>
 
@@ -8,7 +8,6 @@
 <%@page import="java.util.*"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="db.Categoria"%>
-<%@page import="db.Utente"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="db.DBManager"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -21,20 +20,9 @@
 <html>
     <head>
         <%@include file="head.html" %>
-        <title>userPriv</title>
+        <title>userPub</title>
     </head>
     <body>
-        <%
-            HttpSession ses = request.getSession();
-            Utente utente;
-            utente = (Utente)ses.getAttribute("utente");
-            String id_utente = "0";
-            if(utente==null){
-                response.sendRedirect("index.jsp");
-            }else{
-                id_utente = utente.getId();
-            }
-        %>
         <%! private DBManager manager; %>
         <%! 
             public void init() throws ServletException {
@@ -47,7 +35,7 @@
         <%--Dati utente--%>
         <%
             String sql1 = "SELECT * FROM carpediem.Utente WHERE id_utente = ?";
-            ResultSet info = manager.getData(sql1,id_utente);
+            ResultSet info = manager.getData(sql1, "1");
             info.next();
         %>
         <%--Post utente--%>
@@ -58,7 +46,7 @@
                         +" ON U.id_utente = P.utente"
                         +" WHERE U.id_utente = ?";
             
-            ResultSet post = manager.getData(sql2,id_utente);
+            ResultSet post = manager.getData(sql2, "2");
             
         %>
         <%--Post utente--%>
@@ -71,7 +59,7 @@
                         +" ON C.id_cat = P.categoria"
                         +" WHERE U.id_utente = ?";
             
-            ResultSet cate = manager.getData(sql3,id_utente);   
+            ResultSet cate = manager.getData(sql3, "2");   
         %>
         
         <div class="container-fluid">
@@ -135,16 +123,6 @@
                                     </td>
                                     <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
                                         <%=post.getString("testo")%>
-                                    </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
-                                        <button type="button" class="btn btn-default" aria-label="Left Align">
-                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                        </button>
-                                    </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
-                                        <button type="button" class="btn btn-default" aria-label="Left Align">
-                                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                        </button>
                                     </td>
                                 </tr>
                                 <%}%>
