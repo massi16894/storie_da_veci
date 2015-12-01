@@ -100,28 +100,28 @@
                         </div>
                         <div class="panel1 panel-body">
                             <!--Post-->
-                            <table style="margin-left: auto; margin-right: auto;">
+                            <table style="margin-left: auto; margin-right: auto;" class="table">
                                 <tr>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <b>Nome</b>
                                     </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <b>Categoria</b>
                                     </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <b>Descrizione</b>
                                     </td>
 
                                 </tr>
                                 <% while(post.next() && cate.next()){%>
                                 <tr>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <%=post.getString("titolo")%>
                                     </td> 
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <%=cate.getString("nome")%>
                                     </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <%=post.getString("testo")%>
                                     </td>
                                 </tr>
