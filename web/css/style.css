@@ -122,6 +122,7 @@ body {
 
 .titolo {
     font-family: cursive;
+    text-shadow: 2px 2px white;
 }
 
 .logout {
