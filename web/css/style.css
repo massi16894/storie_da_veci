@@ -40,23 +40,22 @@ font-size: 18px;
 color: #337ab7;
 }
 
-strong.blu-titolo {
+h2.blu-titolo {
     color: green;
     font-size: 20px;
-}
-strong.ara-titolo {
+}h2.ara-titolo {
     color: #b25900;
     font-size: 20px;
-}strong.vio-titolo {
-    color: #660066;
+}h2.vio-titolo {
+    color: #d24dff;
     font-size: 20px;
-}strong.ros-titolo {
+}h2.ros-titolo {
     color: #8c2300;
     font-size: 20px;
-}strong.ver-titolo {
+}h2.ver-titolo {
     color: #758b40;
     font-size: 20px;
-}strong.azz-titolo {
+}h2.azz-titolo {
     color: #006dd9;
     font-size: 20px;
 }
