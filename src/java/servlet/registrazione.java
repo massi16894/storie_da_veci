@@ -6,6 +6,7 @@
 package servlet;
 
 import db.DBManager;
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class registrazione extends HttpServlet {
-
+    private static final String SAVE_DIR = "img/profile";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -28,7 +29,7 @@ public class registrazione extends HttpServlet {
      * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException, SQLException, Exception {
         String nome = request.getParameter("nome");
         String cognome = request.getParameter("cognome");
         String email = request.getParameter("email");
@@ -36,9 +37,16 @@ public class registrazione extends HttpServlet {
         String date = request.getParameter("date");
         String telefono = request.getParameter("num_tel");
         String indirizzo = request.getParameter("indirizzo");
+        
+        /*foto*/
+        String appPath = request.getParameter("profile-img");
+        // constructs path of the directory to save uploaded file
+        String savePath = SAVE_DIR + File.separator + appPath;
+        /*foto*/
+        
         DBManager manager = (DBManager)super.getServletContext().getAttribute("dbmanager"); 
         String sql = "INSERT INTO carpediem.Utente (email, password, data, nome, cognome, telefono, indirizzo, path_foto) values (?, ?, ?, ?, ?, ?, ?, ?)";
-        manager.setData(sql, email, password, date, nome, cognome, telefono, indirizzo, null);
+        manager.setData(sql, email, password, date, nome, cognome, telefono, indirizzo, savePath);
         response.sendRedirect("reg_ok.jsp");
     }
 
@@ -58,6 +66,8 @@ public class registrazione extends HttpServlet {
             processRequest(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(registrazione.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(registrazione.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -75,6 +85,8 @@ public class registrazione extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
+            Logger.getLogger(registrazione.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
             Logger.getLogger(registrazione.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

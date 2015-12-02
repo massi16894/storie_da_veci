@@ -76,4 +76,6 @@ $(document).ready(function(){
         $('.cat').append('<input type="hidden" name="categoria" value="' + id_cat + '">');
     });
     
+    $("#up-img").fileinput({showCaption: false});
+    
 });
