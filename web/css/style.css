@@ -1,6 +1,5 @@
 * {
     border-color: red;
-    
 }
 
 /*style categories*/
@@ -8,9 +7,62 @@ body {
     background: url(../img/tanti-vecchi-felici-2.jpg);
 }
 
+.link-a-utente:hover{
+    color: #23527c;
+    text-decoration: underline;
+}
+
+.linea-categoria{
+    
+border-bottom: 1px solid #ddd;
+    
+width: 95%;
+}
+
+.col-sm-8 img.img-piccola{
+    
+width: 80px;
+    
+border-color: black;
+    
+box-shadow: 0 1px 1px white, 0 -1px 1px white;
+}
+.link-a-utente{
+    
+border: none;
+    
+background: none;
+    
+/* text-decoration: underline; */
+    
+font-size: 18px;
+    
+color: #337ab7;
+}
+
+strong.blu-titolo {
+    color: green;
+    font-size: 20px;
+}
+strong.ara-titolo {
+    color: #b25900;
+    font-size: 20px;
+}strong.vio-titolo {
+    color: #660066;
+    font-size: 20px;
+}strong.ros-titolo {
+    color: #8c2300;
+    font-size: 20px;
+}strong.ver-titolo {
+    color: #758b40;
+    font-size: 20px;
+}strong.azz-titolo {
+    color: #006dd9;
+    font-size: 20px;
+}
 #pagina-categoria .hp{
     height: 100%;
-    font-size: 20px;
+    font-size: 13px;
 }
 .row .panel-chiaro{
     background-color: #f1f1f1;

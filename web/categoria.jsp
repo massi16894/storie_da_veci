@@ -32,35 +32,57 @@
 
                 <div class="col-sm-2"></div>
                     <div class="col-sm-8">
+                        
+                <!--<div class="col-sm-3 col-xs-12">
+                    <div class="panel panel1 panel-default panel-chiaro">                               
+                        <div class="panel1 panel-heading" style="text-align: center">
+                            <strong>Foto</strong>
+                        </div>
+                        <div class="panel1 panel-body">
+                            <div class="col-sm-8" style="margin: auto">
+                                <img src="img/My_Grandfather_Photo_from_January_17.JPG">
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
                 <%
                     int j = 0;
                     while (rs.next()) {
                         if(j==0){
                 %>
-                        <h2 class="<%= rs.getString("colore")%>"><%= rs.getString("nome")%></h2>
-                        <hr>
+                <div class="panel panel1 panel-default panel-chiaro">
+
+                        <!--<h2 class="<%= rs.getString("colore")%>"><%= rs.getString("nome")%></h2>-->
+                        <div class="panel1 panel-heading" style="text-align: center">
+                            <strong class="<%= rs.getString("colore")%>-titolo"><%= rs.getString("nome")%></strong>
+                        </div>
+                        <!--<hr>-->
 
                 <%
                         }
                         j++;
                 %>
-                            <div class="panel panel1 panel-default panel-chiaro">
                                 
                                 <div class="row content">   
-                                    
-                                    <div class="col-md-3">
+                                    <hr class="linea-categoria">
+
+                                    <div class="col-md-2">
                                         <form method="post" action="userPub.jsp">
                                             <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
-                                            <input type="submit" value="<%= rs.getString("cognome")%>">
+                                            <input type="submit" class="link-a-utente" value="<%= rs.getString("cognome")%>">
                                         </form>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
+                                        <img class="img-piccola" src="img/My_Grandfather_Photo_from_January_17.JPG" alt="<%= rs.getString("cognome")%>" />
+                                    </div>
+                                   
+                                    <!--<div class="col-md-3">
                                         <% if(rs.getString("media")==null) { %>
                                             solo testo
                                         <% } else { %>
                                             <a href="<%= rs.getString("media")%>" target="blank">Contenuto multimediale</a>
                                         <% } %>
-                                    </div>    
+                                    </div>    -->
                                     <div class="col-md-3">
                                                 <form method="get" action="post.jsp">
                                                     <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
@@ -69,13 +91,18 @@
                                                     </button>
                                                 </form>
                                     </div>
-                                    <div class="col-md-3"><%= rs.getString("testo")%></div>
+                                    <div class="col-md-5"><%= rs.getString("testo")%>
+                                        
+                                        <% if(rs.getString("media")!=null) { %>
+                                        <br><br><a href="<%= rs.getString("media")%>" target="blank">Contenuto multimediale</a>
+                                        <% } %>
+                                    </div>
                                 </div>
-                            </div>
                             <%
                     }
 
-                %>
+                %>                                </div>
+
                     </div>
             </div>
         </div>
