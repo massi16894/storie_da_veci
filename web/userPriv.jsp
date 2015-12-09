@@ -72,7 +72,7 @@
             
             ResultSet cate = manager.getData(sql3, id_utente);   
         %>
-        
+        <%@include file='modal.jsp' %>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3"></div>
@@ -98,6 +98,9 @@
                             <%
                                 out.println("<b>Nome:</b> "+info.getString("nome")+"<br><b>Cognome:</b> "+info.getString("cognome")+"<br><b>Indirizzo:</b> "+info.getString("indirizzo")+"<br><b>Email:</b> "+info.getString("email")+"<br><br>");
                             %>
+                            <button type="button" class="btn btn-default" aria-label="Left Align" data-toggle="modal" data-target="#modal_info">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </button>
                         </div>
                     </div>
                 </div>     
@@ -136,12 +139,10 @@
                                         <%=post.getString("testo")%>
                                     </td>
                                     <td>
-                                        <form method="GET" action="">
-                                            <button type="submit" class="btn btn-default" aria-label="Left Align">
-                                                <input type="hidden" name="id_post" value="<%=post.getString("id_post")%>">
-                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                            </button>
-                                        </form>
+                                        <button type="submit" class="btn btn-default" aria-label="Left Align" data-toggle="modal" data-target="#modal_post">
+                                            <input type="hidden" name="id_post" value="<%=post.getString("id_post")%>">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                        </button>      
                                     </td>
                                     <td>
                                         <form method="GET" action="delete">
