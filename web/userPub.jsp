@@ -118,9 +118,7 @@
                                     <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
                                         <form method="get" action="post.jsp">
                                             <input type="hidden" name="id" value="<%=post.getString("id_post")%>">
-                                            <button type="submit" class="truncate">
-                                                <%=post.getString("titolo")%>
-                                            </button>
+                                            <input type="submit" class="link-a-utente" value="<%= post.getString("titolo")%>">
                                         </form>
                                     </td> 
                                     <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
