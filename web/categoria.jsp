@@ -85,10 +85,6 @@
                                     <% } %>
                                 <% } %>
                             </div>
-                            <!--<div class="col-md-2">
-                                <img class="img-piccola" src="img/My_Grandfather_Photo_from_January_17.JPG" alt="<%= rs.getString("cognome")%>" />
-                            </div>-->
-
                             <!--<div class="col-md-3">
                             <% if (rs.getString("media") == null) { %>
                                 solo testo
@@ -101,25 +97,9 @@
                             %>
                             <div class="col-md-3 truncate"><%= rs.getString("testo")%></div>
                             <div class="col-md-3">
-<<<<<<< HEAD
                                 <a class="btn btn-primary img-responsive truncate" href="<%= rs.getString("media")%>" target="blank">
                                     Contenuto multimediale
                                 </a>
-=======
-                                <!-- <form method="get" action="post.jsp"> -->
-                                <form method="get" action="post.jsp">
-                                    <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
-                                    <button type="submit" class="btn btn-primary img-responsive hp truncate">
-                                        <%= rs.getString("titolo")%>
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="col-md-5"><%= rs.getString("testo")%>
-
-                                <% if (rs.getString("media") != null) {%>
-                                <br><br><a href="<%= rs.getString("media")%>" target="blank">Contenuto multimediale</a>
-                                <% } %>
->>>>>>> master
                             </div>
                             <%  } else { %>
                             <div class="col-md-6 truncate"><%= rs.getString("testo")%></div>
