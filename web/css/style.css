@@ -1,3 +1,6 @@
+/** {
+    border: 1px solid red;
+}*/
 /*style categories*/
 
 a.btn {
@@ -17,6 +20,14 @@ a.btn:hover{
     color: white;
     font-size: 15px;
     background-position: 0 -15px;
+}
+
+.vertical-align {
+    padding-top: 0px !important;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 body {
@@ -83,7 +94,9 @@ h2.blu-titolo {
     background-color: #f1f1f1;
     border-color: #fff;
     box-shadow:  0 1px 1px #e8e8e6, 0 -1px 1px #e8e8e6;
-    padding: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .ara{
@@ -241,8 +254,16 @@ h2.blu-titolo {
     float: left;;
 }
 
-#crea input, #registrazione input {
+#registrazione input {
     width: 210px;
+}
+
+#crea input {
+    width: 320px;
+}
+
+#crea .submit {
+    width: 100px;
 }
 
 #day, #month {

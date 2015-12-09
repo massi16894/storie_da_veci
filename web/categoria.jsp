@@ -56,54 +56,48 @@
 
                         <div class="row content">   
                             <hr class="linea-categoria">
-
-                            <div class="col-md-4">
-                                <form method="get" action="post.jsp">
-                                    <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
-                                    <button type="submit" class="btn btn-primary img-responsive hp truncate">
-                                        <%= rs.getString("titolo")%>
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="col-md-2">
-                                <%if (user == null) {%>
-                                    <form method="post" action="userPub.jsp">
-                                        <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
-                                        <input type="submit" class="link-a-utente" value="<%= rs.getString("cognome")%>">
+                            <div class="row vertical-align" id="post-list">
+                                <div class="col-md-4">
+                                    <form method="get" action="post.jsp">
+                                        <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
+                                        <button type="submit" class="btn btn-primary  hp truncate">
+                                            <%= rs.getString("titolo")%>
+                                        </button>
                                     </form>
-                                <% } else {%>
-                                    <%if (user.getCognome().equals(rs.getString("cognome"))) {%>
-                                        <form method="post" action="userPriv.jsp">
-                                            <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
-                                            <input type="submit" class="link-a-utente" value="<%= rs.getString("cognome")%>">
-                                        </form>
-                                    <% } else { %>
+                                </div>
+                                <div class="col-md-2">
+                                    <%if (user == null) {%>
                                         <form method="post" action="userPub.jsp">
                                             <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
                                             <input type="submit" class="link-a-utente" value="<%= rs.getString("cognome")%>">
                                         </form>
+                                    <% } else {%>
+                                        <%if (user.getCognome().equals(rs.getString("cognome"))) {%>
+                                            <form method="post" action="userPriv.jsp">
+                                                <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
+                                                <input type="submit" class="link-a-utente" value="<%= rs.getString("cognome")%>">
+                                            </form>
+                                        <% } else { %>
+                                            <form method="post" action="userPub.jsp">
+                                                <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
+                                                <input type="submit" class="link-a-utente" value="<%= rs.getString("cognome")%>">
+                                            </form>
+                                        <% } %>
                                     <% } %>
-                                <% } %>
+                                </div>
+                                <%
+                                    if (!(rs.getString("media").equals(""))) {
+                                %>
+                                <div class="col-md-3 truncate"><%= rs.getString("testo")%></div>
+                                <div class="col-md-3">
+                                    <a class="btn btn-primary truncate" href="<%= rs.getString("media")%>" target="blank">
+                                        Contenuto multimediale
+                                    </a>
+                                </div>
+                                <%  } else { %>
+                                <div class="col-md-6 truncate"><%= rs.getString("testo")%></div>
+                                <%  } %>
                             </div>
-                            <!--<div class="col-md-3">
-                            <% if (rs.getString("media") == null) { %>
-                                solo testo
-                            <% } else {%>
-                                <a href="<%= rs.getString("media")%>" target="blank">Contenuto multimediale</a>
-                            <% }%>
-                            </div>    -->
-                            <%
-                                if (rs.getString("media") != null) {
-                            %>
-                            <div class="col-md-3 truncate"><%= rs.getString("testo")%></div>
-                            <div class="col-md-3">
-                                <a class="btn btn-primary img-responsive truncate" href="<%= rs.getString("media")%>" target="blank">
-                                    Contenuto multimediale
-                                </a>
-                            </div>
-                            <%  } else { %>
-                            <div class="col-md-6 truncate"><%= rs.getString("testo")%></div>
-                            <%  } %>
                         </div>
                         
                         <% } if (found == 0){ %>

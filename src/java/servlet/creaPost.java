@@ -28,7 +28,7 @@ public class creaPost extends HttpServlet {
         String titolo = request.getParameter("titolo");
         String testo = request.getParameter("testo");
         String utente = request.getParameter("utente");
-        String media = request.getParameter("media");
+        String media = request.getParameter("media-embed");
         DBManager manager = (DBManager)super.getServletContext().getAttribute("dbmanager"); 
         String sql = "INSERT INTO carpediem.Post (titolo, categoria, utente, testo, media) values (?, ?, ?, ?, ?)";
         manager.setData(sql, titolo, categoria, utente, testo, media);

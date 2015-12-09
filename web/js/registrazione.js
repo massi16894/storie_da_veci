@@ -2,6 +2,8 @@ var day = 1;
 var month = 1;
 var year = 1900;
 var id_cat = 1;
+var media = null;
+var res = null;
 
 $(document).ready(function(){
     var pass1 = $("input[name=pass1]");
@@ -76,6 +78,16 @@ $(document).ready(function(){
         $('.cat').append('<input type="hidden" name="categoria" value="' + id_cat + '">');
     });
     
-    $("#up-img").fileinput({showCaption: false});
+    $('input[name="submit"]').click(function () {
+        console.log("ciao");
+        $('.media').empty();
+        media = $('input[name="media"]').val();
+        res = media.replace("watch?v=","embed/");
+        $('.media').append('<input type="hidden" name="media-embed" value="' + res + '">');
+    });
+    
+    $('#up-img').fileinput({showCaption: false});
+    
+    
     
 });

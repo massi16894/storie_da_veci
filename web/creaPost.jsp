@@ -80,7 +80,10 @@
                                                     <b>Media:</b>
                                                 </td>
                                                 <td>
-                                                    <input type="text" name="media" maxlength="50">          
+                                                    <input type="text" name="media" maxlength="50">
+                                                </td>
+                                                <td class="media">
+                                                    <input type="hidden" name="media-embed" maxlength="50">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -89,8 +92,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td></td>
                                                 <td colspan="2">
-                                                    <input type="submit" value="Crea Post">
+                                                    <input type="submit" value="Crea Post" name="submit" class="submit">
                                                 </td>
                                             </tr>
                                         </table>
