@@ -72,7 +72,7 @@
                         </div>
                         <div class="panel1 panel-body">
                             <div class="col-sm-8" style="margin: auto">
-                                <img src="img/My_Grandfather_Photo_from_January_17.JPG">
+                                <img src="<%=info.getString("path_foto")%>">
                                 </div>
                         </div>
                     </div>
@@ -116,7 +116,10 @@
                                 <% while(post.next() && cate.next()){%>
                                 <tr>
                                     <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
-                                        <%=post.getString("titolo")%>
+                                        <form method="get" action="post.jsp">
+                                            <input type="hidden" name="id" value="<%=post.getString("id_post")%>">
+                                            <input type="submit" class="link-a-utente" value="<%= post.getString("titolo")%>">
+                                        </form>
                                     </td> 
                                     <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
                                         <%=cate.getString("nome")%>

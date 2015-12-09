@@ -127,7 +127,10 @@
                                 <% while(post.next() && cate.next()){%>
                                 <tr>
                                     <td>
-                                        <%=post.getString("titolo")%>
+                                        <form method="get" action="post.jsp">
+                                            <input type="hidden" name="id" value="<%=post.getString("id_post")%>">
+                                            <input type="submit" class="link-a-utente" value="<%= post.getString("titolo")%>">
+                                        </form>
                                     </td> 
                                     <td>
                                         <%=cate.getString("nome")%>

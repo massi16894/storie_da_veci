@@ -77,6 +77,14 @@
                                             </tr>
                                             <tr>
                                                 <td>
+                                                    <b>Media:</b>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="media" maxlength="50">          
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
                                                     <input type="hidden"name="utente" value="<%=user.getId()%>">          
                                                 </td>
                                             </tr>

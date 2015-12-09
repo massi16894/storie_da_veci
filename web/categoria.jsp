@@ -66,10 +66,24 @@
                                 </form>
                             </div>
                             <div class="col-md-2">
-                                <form method="post" action="userPub.jsp">
-                                    <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
-                                    <input type="submit" class="link-a-utente" value="<%= rs.getString("cognome")%>">
-                                </form>
+                                <%if (user == null) {%>
+                                    <form method="post" action="userPub.jsp">
+                                        <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
+                                        <input type="submit" class="link-a-utente" value="<%= rs.getString("cognome")%>">
+                                    </form>
+                                <% } else {%>
+                                    <%if (user.getCognome().equals(rs.getString("cognome"))) {%>
+                                        <form method="post" action="userPriv.jsp">
+                                            <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
+                                            <input type="submit" class="link-a-utente" value="<%= rs.getString("cognome")%>">
+                                        </form>
+                                    <% } else { %>
+                                        <form method="post" action="userPub.jsp">
+                                            <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
+                                            <input type="submit" class="link-a-utente" value="<%= rs.getString("cognome")%>">
+                                        </form>
+                                    <% } %>
+                                <% } %>
                             </div>
                             <!--<div class="col-md-2">
                                 <img class="img-piccola" src="img/My_Grandfather_Photo_from_January_17.JPG" alt="<%= rs.getString("cognome")%>" />
@@ -87,9 +101,25 @@
                             %>
                             <div class="col-md-3 truncate"><%= rs.getString("testo")%></div>
                             <div class="col-md-3">
+<<<<<<< HEAD
                                 <a class="btn btn-primary img-responsive truncate" href="<%= rs.getString("media")%>" target="blank">
                                     Contenuto multimediale
                                 </a>
+=======
+                                <!-- <form method="get" action="post.jsp"> -->
+                                <form method="get" action="post.jsp">
+                                    <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
+                                    <button type="submit" class="btn btn-primary img-responsive hp truncate">
+                                        <%= rs.getString("titolo")%>
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="col-md-5"><%= rs.getString("testo")%>
+
+                                <% if (rs.getString("media") != null) {%>
+                                <br><br><a href="<%= rs.getString("media")%>" target="blank">Contenuto multimediale</a>
+                                <% } %>
+>>>>>>> master
                             </div>
                             <%  } else { %>
                             <div class="col-md-6 truncate"><%= rs.getString("testo")%></div>
