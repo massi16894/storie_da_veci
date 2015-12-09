@@ -90,7 +90,7 @@
                             </div>    -->
                             <div class="col-md-3">
                                 <!-- <form method="get" action="post.jsp"> -->
-                                <form method="get" action="post-prova.jsp">
+                                <form method="get" action="post.jsp">
                                     <input type="hidden" name="id" value="<%=rs.getString("id_post")%>">
                                     <button type="submit" class="btn btn-primary img-responsive hp truncate">
                                         <%= rs.getString("titolo")%>

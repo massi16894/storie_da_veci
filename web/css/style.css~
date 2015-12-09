@@ -341,9 +341,3 @@ h2.blu-titolo {
     }
 }
 /*carpi*/
-.col-sm-3 img.img-media{
-	width: 120px;
-	height: 120;    
-	border-color: black;
-	box-shadow: 0 1px 1px white, 0 -1px 1px white;
-}

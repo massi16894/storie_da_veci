@@ -72,7 +72,7 @@
                         </div>
                         <div class="panel1 panel-body">
                             <div class="col-sm-8" style="margin: auto">
-                                <img src="img/My_Grandfather_Photo_from_January_17.JPG">
+                                <img src="<%=info.getString("path_foto")%>">
                                 </div>
                         </div>
                     </div>
