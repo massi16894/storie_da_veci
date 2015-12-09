@@ -101,6 +101,14 @@
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td></td>
+                                                <td>
+                                                <label class="control-label">Aggiungi Foto Profilo
+                                                    <input id="up-img" name="profile-img" type="file" multiple class="file-loading">
+                                                </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <td colspan="2">
                                                     <input type="submit" value="Registrati">
                                                 </td>

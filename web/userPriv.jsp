@@ -83,8 +83,8 @@
                         </div>
                         <div class="panel1 panel-body">
                             <div class="col-sm-8" style="margin: auto">
-                                <img src="img/My_Grandfather_Photo_from_January_17.JPG">
-                                </div>
+                                <img src="<%= info.getString("path_foto")%>">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,12 @@
                                 <% while(post.next() && cate.next()){%>
                                 <tr>
                                     <td>
-                                        <%=post.getString("titolo")%>
+                                        <form method="get" action="post.jsp">
+                                            <input type="hidden" name="id" value="<%=post.getString("id_post")%>">
+                                            <button type="submit" class="truncate">
+                                                <%=post.getString("titolo")%>
+                                            </button>
+                                        </form>
                                     </td> 
                                     <td>
                                         <%=cate.getString("nome")%>
