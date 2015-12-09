@@ -5,6 +5,7 @@
         <group>
             <file>file:/home/carpediem/storie_da_veci/web/css/style.css</file>
             <file>file:/home/carpediem/storie_da_veci/web/registrazione.jsp</file>
+            <file>file:/home/carpediem/storie_da_veci/src/java/db/Utente.java</file>
             <file>file:/home/carpediem/storie_da_veci/web/categoria.jsp</file>
             <file>file:/home/carpediem/storie_da_veci/web/index.jsp</file>
             <file>file:/home/carpediem/storie_da_veci/web/userPriv.jsp</file>
@@ -14,13 +15,12 @@
         </group>
         <group>
             <file>file:/home/carpediem/storie_da_veci/web/css/style.css</file>
+            <file>file:/home/carpediem/storie_da_veci/web/js/registrazione.js</file>
             <file>file:/home/carpediem/storie_da_veci/web/registrazione.jsp</file>
-            <file>file:/home/carpediem/storie_da_veci/src/java/db/Utente.java</file>
             <file>file:/home/carpediem/storie_da_veci/web/categoria.jsp</file>
             <file>file:/home/carpediem/storie_da_veci/web/index.jsp</file>
-            <file>file:/home/carpediem/storie_da_veci/web/userPriv.jsp</file>
+            <file>file:/home/carpediem/storie_da_veci/web/creaPost.jsp</file>
             <file>file:/home/carpediem/storie_da_veci/src/java/servlet/creaPost.java</file>
-            <file>file:/home/carpediem/storie_da_veci/web/userPub.jsp</file>
             <file>file:/home/carpediem/storie_da_veci/web/navbar.jsp</file>
         </group>
     </open-files>
