@@ -16,6 +16,10 @@
         <servlet-class>servlet.validate</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>validatePost</servlet-name>
+        <servlet-class>servlet.validatePost</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>creaPost</servlet-name>
         <servlet-class>servlet.creaPost</servlet-class>
     </servlet>
@@ -50,6 +54,10 @@
     <servlet-mapping>
         <servlet-name>validate</servlet-name>
         <url-pattern>/validate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>validatePost</servlet-name>
+        <url-pattern>/validatePost</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>creaPost</servlet-name>

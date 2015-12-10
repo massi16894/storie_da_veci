@@ -45,20 +45,3 @@ $(document).ready(function(){
  });
 
 $("#login input").focusin($("#login-error").addClass("invisibile"));
-/*
-function sendPassword(){
-    $.ajax({
-        type: "POST",
-        url: "sendPassword",
-        data: {email: $("#login input[name=email]").val()},
-        success: function(esiste){
-            if(esiste==="true"){
-                alert("Email inviata");
-            } else if (esiste==="false"){
-                alert("Email non valida");
-            } else {
-                window.location.href = "argh_page.jsp";
-            }
-        }
-    });
-}*/
