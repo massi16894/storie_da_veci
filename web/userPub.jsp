@@ -80,12 +80,12 @@
                 <div class="col-sm-3 col-xs-12">
                     <div class="panel panel1 panel-default panel-chiaro">                               
                         <div class="panel1 panel-heading" style="text-align: center">
-                            <strong>Info generali</strong>
+                            <strong>Info utente</strong>
                         </div>
                         <div class="panel1 panel-body">
                             <!--Info-->
                             <%
-                                out.println("<b>Nome:</b> "+info.getString("nome")+"<br><b>Cognome:</b> "+info.getString("cognome")+"<br><b>Indirizzo:</b> "+info.getString("indirizzo")+"<br><b>Email:</b> "+info.getString("email")+"<br><br>");
+                                out.println("<b>Nome:</b> "+info.getString("nome")+"<br><b>Cognome:</b> "+info.getString("cognome")+"<br><b>Indirizzo:</b> "+info.getString("indirizzo")+"<br><b>Email:</b> "+info.getString("email"));
                             %>
                         </div>
                     </div>
@@ -100,31 +100,31 @@
                         </div>
                         <div class="panel1 panel-body">
                             <!--Post-->
-                            <table style="margin-left: auto; margin-right: auto;">
+                            <table style="margin-left: auto; margin-right: auto;" class="table">
                                 <tr>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <b>Nome</b>
                                     </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <b>Categoria</b>
                                     </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <b>Descrizione</b>
                                     </td>
 
                                 </tr>
                                 <% while(post.next() && cate.next()){%>
                                 <tr>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <form method="get" action="post.jsp">
                                             <input type="hidden" name="id" value="<%=post.getString("id_post")%>">
                                             <input type="submit" class="link-a-utente" value="<%= post.getString("titolo")%>">
                                         </form>
                                     </td> 
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <%=cate.getString("nome")%>
                                     </td>
-                                    <td style=" margin: 12px 12px 12px 12px; padding: 12px 12px 12px 12px;">
+                                    <td>
                                         <%=post.getString("testo")%>
                                     </td>
                                 </tr>

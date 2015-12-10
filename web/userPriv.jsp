@@ -20,6 +20,7 @@
 <html>
     <head>
         <%@include file="head.html" %>
+        <script src="js/save.js"></script>
         <title>userPriv</title>
     </head>
     <body>
@@ -72,42 +73,47 @@
             
             ResultSet cate = manager.getData(sql3, id_utente);   
         %>
-        
+        <%@include file='modal.jsp' %>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-sm-3 col-xs-12">
-                    <div class="panel panel1 panel-default panel-chiaro">                               
+                    <div class="panel panel1 panel-default panel-chiaro" style="height: 230px">                               
                         <div class="panel1 panel-heading" style="text-align: center">
                             <strong>Foto</strong>
                         </div>
                         <div class="panel1 panel-body">
                             <div class="col-sm-8" style="margin: auto">
                                 <img src="<%= info.getString("path_foto")%>">
+                                
                             </div>
+                            
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-12">
                     <div class="panel panel1 panel-default panel-chiaro">                               
                         <div class="panel1 panel-heading" style="text-align: center">
-                            <strong>Info generali</strong>
+                            <strong>Dati personali</strong>
                         </div>
                         <div class="panel1 panel-body">
-                            <!--Info-->
+                            
                             <%
                                 out.println("<b>Nome:</b> "+info.getString("nome")+"<br><b>Cognome:</b> "+info.getString("cognome")+"<br><b>Indirizzo:</b> "+info.getString("indirizzo")+"<br><b>Email:</b> "+info.getString("email")+"<br><br>");
                             %>
+                            <button type="button" class="btn btn-info" aria-label="Left Align" data-toggle="modal" data-target="#modal_info">
+                            Modifica
+                            </button>
                         </div>
                     </div>
                 </div>     
             </div>
             <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-sm-6 col-xs-12">
+                <div class="col-md-1"></div>
+                <div class="col-sm-10 col-xs-12">
                     <div class="panel panel1 panel-default panel-chiaro">                               
                         <div class="panel1 panel-heading" style="text-align: center">
-                            <strong>Post pubblicati</strong>
+                            <strong>I miei post</strong>
                         </div>
                         <div class="panel1 panel-body">
                             <!--Post-->
@@ -139,18 +145,16 @@
                                         <%=post.getString("testo")%>
                                     </td>
                                     <td>
-                                        <form method="GET" action="">
-                                            <button type="submit" class="btn btn-default" aria-label="Left Align">
-                                                <input type="hidden" name="id_post" value="<%=post.getString("id_post")%>">
-                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                            </button>
-                                        </form>
+                                        <button type="button" class="btn btn-info" aria-label="Left Align" data-toggle="modal" data-target="#modal_post">
+                                            <input type="hidden" name="id_post" value="<%=post.getString("id_post")%>">
+                                            Modifica
+                                        </button>      
                                     </td>
                                     <td>
                                         <form method="GET" action="delete">
-                                            <button type="submit" class="btn btn-default" aria-label="Left Align">
+                                            <button type="submit" class="btn btn-warning" aria-label="Left Align">
                                                 <input type="hidden" name="id_post" value="<%=post.getString("id_post")%>">
-                                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                                Elimina
                                             </button>
                                         </form>
                                     </td>
