@@ -40,52 +40,54 @@ body {
 }
 
 .linea-categoria{
-    
-border-bottom: 1px solid #ddd;
-    
-width: 95%;
+    border-bottom: 1px solid #ddd;
+    width: 95%;
 }
 
 .col-sm-8 img.img-piccola{
-    
-width: 80px;
-    
-border-color: black;
-    
-box-shadow: 0 1px 1px white, 0 -1px 1px white;
+    width: 80px;
+    border-color: black;
+    box-shadow: 0 1px 1px white, 0 -1px 1px white;
 }
 .link-a-utente{
+    border: none;
+    background: none;
     
-border: none;
-    
-background: none;
-    
-/* text-decoration: underline; */
-    
-font-size: 18px;
-    
-color: #337ab7;
+    /* text-decoration: underline; */
+    font-size: 18px;
+    color: #337ab7;
 }
 
 h2.blu-titolo {
     color: green;
     font-size: 20px;
-}h2.ara-titolo {
+}
+
+h2.ara-titolo {
     color: #b25900;
     font-size: 20px;
-}h2.vio-titolo {
+}
+
+h2.vio-titolo {
     color: #d24dff;
     font-size: 20px;
-}h2.ros-titolo {
+}
+
+h2.ros-titolo {
     color: #8c2300;
     font-size: 20px;
-}h2.ver-titolo {
+}
+
+h2.ver-titolo {
     color: #758b40;
     font-size: 20px;
-}h2.azz-titolo {
+}
+
+h2.azz-titolo {
     color: #006dd9;
     font-size: 20px;
 }
+
 #pagina-categoria .hp{
     height: 100%;
     font-size: 20px;
@@ -383,8 +385,8 @@ h2.blu-titolo {
 }
 /*carpi*/
 .col-sm-3 img.img-media{
-	width: 120px;
-	height: 120;    
-	border-color: black;
-	box-shadow: 0 1px 1px white, 0 -1px 1px white;
+    width: 120px;
+    height: 120;    
+    border-color: black;
+    box-shadow: 0 1px 1px white, 0 -1px 1px white;
 }
