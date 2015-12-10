@@ -30,11 +30,40 @@
                             <h4 class="modal-title" id="myModalLabel">Modifica Dati Privati</h4>
                     </div>
                     <div class="modal-body">
-                        FORM PER LA MODIFICA DATI PRIVATI
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>Nome</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Cognome</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>Data</label>
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Indirizzo</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>Telefono</label>
+                                <input type="tel" class="form-control">
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Email</label>
+                                <input type="email" class="form-control">
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="save">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -48,11 +77,32 @@
                             <h4 class="modal-title" id="myModalLabel">Modifica Post</h4>
                     </div>
                     <div class="modal-body">
-                        FORM PER LA MODIFICA POST
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>Titolo</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-lg-6">
+                                <label>Categoria</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label>Testo</label>
+                                <textarea class="form-control" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label>Media</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="save1">Save changes</button>
                     </div>
                 </div>
             </div>

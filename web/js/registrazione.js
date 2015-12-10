@@ -70,12 +70,8 @@ $(document).ready(function(){
         $('.data').append('<input type="hidden" name="date" value="' + year + '-' + month + '-' + day + '">');
     });
     
-    $('.categoria').click(function() {
-        $('.cat').empty();
-        id_cat = $(this).children(':selected').attr('id');
-        $('.cat').append('<input type="hidden" name="categoria" value="' + id_cat + '">');
-    });
+    $('#up-img').fileinput({showCaption: false});
     
-    $("#up-img").fileinput({showCaption: false});
+    
     
 });

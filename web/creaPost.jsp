@@ -1,9 +1,3 @@
-<%-- 
-    Document   : creaPost
-    Created on : 22-nov-2015, 8.11.39
-    Author     : Berta
---%>
-
 <%@page import="java.sql.ResultSet"%>
 <%@page import="db.DBManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,7 +5,7 @@
 <html>
     <head>
         <%@include file="head.html" %>
-        <script src="js/registrazione.js"></script>
+        <script src="js/post.js"></script>
         <title>Crea Post</title>
     </head>
     <%! private DBManager manager; %>
@@ -67,6 +61,11 @@
                                                     <input type="text" name="titolo" maxlength="50" required>          
                                                 </td>
                                             </tr>
+                                            <tr class="errore invisibile" id="title">
+                                                <td colspan="2">
+                                                    <em>TItolo già esistente</em>
+                                                </td>
+                                            </tr>
                                             <tr>
                                                 <td>
                                                     <b>Testo:</b>
@@ -77,12 +76,24 @@
                                             </tr>
                                             <tr>
                                                 <td>
+                                                    <b>Media:</b>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="media" maxlength="50">
+                                                </td>
+                                                <td class="media">
+                                                    <input type="hidden" name="media-embed" maxlength="50">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
                                                     <input type="hidden"name="utente" value="<%=user.getId()%>">          
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td></td>
                                                 <td colspan="2">
-                                                    <input type="submit" value="Crea Post">
+                                                    <input type="submit" value="Crea Post" name="submit" class="submit">
                                                 </td>
                                             </tr>
                                         </table>

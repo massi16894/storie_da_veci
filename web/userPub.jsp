@@ -72,7 +72,7 @@
                         </div>
                         <div class="panel1 panel-body">
                             <div class="col-sm-8" style="margin: auto">
-                                <img src="img/My_Grandfather_Photo_from_January_17.JPG">
+                                <img src="<%=info.getString("path_foto")%>">
                                 </div>
                         </div>
                     </div>
@@ -80,12 +80,12 @@
                 <div class="col-sm-3 col-xs-12">
                     <div class="panel panel1 panel-default panel-chiaro">                               
                         <div class="panel1 panel-heading" style="text-align: center">
-                            <strong>Info generali</strong>
+                            <strong>Info utente</strong>
                         </div>
                         <div class="panel1 panel-body">
                             <!--Info-->
                             <%
-                                out.println("<b>Nome:</b> "+info.getString("nome")+"<br><b>Cognome:</b> "+info.getString("cognome")+"<br><b>Indirizzo:</b> "+info.getString("indirizzo")+"<br><b>Email:</b> "+info.getString("email")+"<br><br>");
+                                out.println("<b>Nome:</b> "+info.getString("nome")+"<br><b>Cognome:</b> "+info.getString("cognome")+"<br><b>Indirizzo:</b> "+info.getString("indirizzo")+"<br><b>Email:</b> "+info.getString("email"));
                             %>
                         </div>
                     </div>
