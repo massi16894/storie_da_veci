@@ -41,71 +41,77 @@
                 + "WHERE P.id_post = ?";
             ResultSet rs = manager.getData(sql,id_post);
             
-            String sql1 = "SELECT * "
-                    + "FROM carpediem.Post P, carpediem.Categoria C"
-                    + "WHERE C.id_post = ? "
-                    + "AND P.categoria = C.id_cat ";
-            ResultSet cat = manager.getData(sql, id_post);      
-            
             String sql2 = " SELECT * "
                         +" FROM carpediem.Utente AS U"
                         +" INNER JOIN carpediem.Post AS P"
                         +" ON U.id_utente = P.utente"
                         +" WHERE P.id_post = ?";
             ResultSet info = manager.getData(sql2, id_post);
+            
         %>
         <div class="container-fluid" id="pagina-categoria">
             <div class="row">
+                <%  int j = 0;
+                    while (rs.next() && info.next()) {
+                        if(j==0){ %>
                 <div class="col-sm-2"></div>
-                <div class="col-sm-8 panel-chiaro">
-                    <div class="col-sm-3">
-                        <img class="img-media" src ="img/My_Grandfather_Photo_from_January_17.JPG" />
-                        <%  int j = 0;
-                            int found =0;
-                            while (rs.next() && info.next()) {
-                                if(j==0){ %> 
-                        <div class="col-sm-4 panel1 panel-heading" style="text-align: center">
-                           Nome:<%= info.getString("nome")%>
-                           Cognome:<%=info.getString("cognome")%>
-                        </div> 
-                        <% }
-                            found = 1;
-                        %>
-                    </div>
-                    <div class="col-sm-5 panel1 panel-heading" style="text-align: center">
-                        <h2 class ="panel-default" ><%= rs.getString("titolo")%></h2>
-                    <% 
-                        j++;
-                    %>
+                <div class="col-sm-3 col-xs-12">
+                    <div class="panel panel1 panel-default panel-chiaro" style="height: 230px">                               
+                        <div class="panel1 panel-body">
+                            <div class="col-sm-7" style="margin: auto">
+                                <img class ="img-media" src="<%= info.getString("path_foto")%>"/>
+                                <div class="col-sm-4 panel1 panel-heading" style="text-align: center">
+                                    <form method="post" action="userPub.jsp">
+                                    <input type="hidden" name="id" value="<%=rs.getString("utente")%>">                                          
+                                    <input type="submit" class="link-a-utente" value="<%= info.getString("nome") +" "+ info.getString("cognome")%>">
+                                    </form>
+                                </div> 
+                                    <% } %>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-sm-2"></div>
+                <br>
+                <div class="col-sm-5">
+                    <div class="panel panel1 panel-default panel-chiaro">                               
+                        <br><br>
+                        <div class="panel1 panel-heading title" style="text-align: center;">
+                            <strong><%= rs.getString("titolo")%></strong>
+                            <% 
+                                j++;
+                            %>
+                        </div>
+                        <br><br><br>
+                    </div>
+                </div>     
             </div>
-            <hr>
+            <br>
             <div class="row content">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 panel panel1 panel-default panel-chiaro"><%= rs.getString("testo")%></div>
                 <div class="col-sm-2"></div>                    
             </div>
+            <% if (rs.getString("media") != null) {%>
             <div class="row content">
                 <div class="col-sm-2"></div>    
                 <div class="col-sm-8 panel panel1 panel-default panel-chiaro">
-                    <% if (rs.getString("media") != null) {%>
-                        <!--<a href="<%= rs.getString("media")%>" target="blank" class="link-a-utente">Vai al contenuto multimediale per questo post.</a>-->
+                    
+                        <!--<a href="<1%= rs.getString("media")%>" target="blank" class="link-a-utente">Vai al contenuto multimediale per questo post.</a>-->
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item" src="<%= rs.getString("media") %>"></iframe>
                         </div>
-                    <% } %>
+                    
                 </div>    
                 <div class="col-sm-2"></div>
             </div>
-                <div class="row content">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8 panel panel1 panel-default panel-chiaro">
-                        <form method="post" action="userPub.jsp">
-                                    <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
-                                    <input type="submit" class="link-a-utente" value="<%= "Vedi tutto dell'utente " + info.getString("nome") +" "+ info.getString("cognome")%>"> 
-                        </form>
+            <% } else  {} %>
+            <div class="row content">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 panel panel1 panel-default panel-chiaro">
+                    <form method="post" action="userPub.jsp">
+                        <input type="hidden" name="id" value="<%=rs.getString("utente")%>">
+                        <input type="submit" class="link-a-utente" value="<%= "Vedi tutto dell'utente " + info.getString("nome") +" "+ info.getString("cognome")%>"> 
+                    </form>
                     </div>        
                     <div class="col-sm-2"></div>    
                 </div>
