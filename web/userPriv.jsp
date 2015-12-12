@@ -76,14 +76,14 @@
         <%@include file='modal.jsp' %>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-sm-3 col-xs-12">
-                    <div class="panel panel1 panel-default panel-chiaro" style="height: 230px">                               
+                <div class="col-md-2"></div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="panel panel1 panel-default panel-chiaro altezza">                               
                         <div class="panel1 panel-heading" style="text-align: center">
                             <strong>Foto</strong>
                         </div>
                         <div class="panel1 panel-body">
-                            <div class="col-sm-8" style="margin: auto">
+                            <div class="col-sm-8 markup" style="margin: auto">
                                 <img src="<%= info.getString("path_foto")%>">
                                 
                             </div>
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-3 col-xs-12">
+                <div class="col-sm-4 col-xs-12">
                     <div class="panel panel1 panel-default panel-chiaro">                               
                         <div class="panel1 panel-heading" style="text-align: center">
                             <strong>Dati personali</strong>
@@ -109,8 +109,8 @@
                 </div>     
             </div>
             <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-sm-10 col-xs-12">
+                <div class="col-md-2"></div>
+                <div class="col-sm-8 col-xs-12">
                     <div class="panel panel1 panel-default panel-chiaro">                               
                         <div class="panel1 panel-heading" style="text-align: center">
                             <strong>I miei post</strong>
@@ -134,8 +134,10 @@
                                 <tr>
                                     <td>
                                         <form method="get" action="post.jsp">
-                                            <input type="hidden" name="id" value="<%=post.getString("id_post")%>">
-                                            <input type="submit" class="link-a-utente" value="<%= post.getString("titolo")%>">
+                                            <input type="hidden" name="id_post" value="<%=post.getString("id_post")%>">
+                                                <button type="submit" class="btn btn-primary truncate">
+                                                    <%= post.getString("titolo")%>
+                                                </button>
                                         </form>
                                     </td> 
                                     <td>
