@@ -1,7 +1,0 @@
-- sfumatura di grigio corretta
-- pulsanti con sfumatura
-- che le scritte vadano a capo nei box
-- font dei box giusti
-- footer
-- "Se non hai ancora un account, registrati!" che si veda
-- aggiungere titoli e hr
