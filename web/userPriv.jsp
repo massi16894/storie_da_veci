@@ -113,7 +113,7 @@
                 <div class="col-sm-8 col-xs-12">
                     <div class="panel panel1 panel-default panel-chiaro">                               
                         <div class="panel1 panel-heading" style="text-align: center">
-                            <strong>I miei post</strong>
+                            <strong>Le mie storie</strong>
                         </div>
                         <div class="panel1 panel-body">
                             <!--Post-->
@@ -125,27 +125,30 @@
                                     <td>
                                         <b>Categoria</b>
                                     </td>
+                                    <!--
                                     <td colspan="3">
                                         <b>Descrizione</b>
                                     </td>
-
+-->
                                 </tr>
                                 <% while(post.next() && cate.next()){%>
                                 <tr>
                                     <td>
                                         <form method="get" action="post.jsp">
-                                            <input type="hidden" name="id_post" value="<%=post.getString("id_post")%>">
-                                                <button type="submit" class="btn btn-primary truncate">
-                                                    <%= post.getString("titolo")%>
-                                                </button>
+                                            <input type="hidden" name="id" value="<%=post.getString("id_post")%>">
+                                            <button type="submit" class="btn btn-primary  truncate">
+                                                <%=post.getString("titolo")%>
+                                            </button>
                                         </form>
                                     </td> 
                                     <td>
                                         <%=cate.getString("nome")%>
                                     </td>
+                                    <!--
                                     <td>
                                         <%=post.getString("testo")%>
                                     </td>
+                                    -->
                                     <td>
                                         <button type="button" class="btn btn-info" aria-label="Left Align" data-toggle="modal" data-target="#modal_post">
                                             <input type="hidden" name="id_post" value="<%=post.getString("id_post")%>">

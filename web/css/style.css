@@ -385,8 +385,7 @@ h2.azz-titolo {
 }
 /*carpi*/
 .col-sm-7 img.img-media{
-    width: 210px;
-    height: 140px;    
+    width: 200%;
     border-color: black;
     box-shadow: 0 1px 1px white, 0 -1px 1px white;
  }
@@ -396,20 +395,23 @@ h2.azz-titolo {
  }
 
 /*Massi*/
-div.markup{
-position:relative;
-width:220px; 
-height:80px; 
+
+div .markup{
+    position:relative;
+    width:220px; 
+    height:80px; 
 }
-div.markup img{ 
-position:absolute;
-left:50%; 
-top:50%;
-margin-left:-60px;
-margin-top:-40px;
+
+div .markup img{ 
+    position:absolute;
+    left:50%; 
+    top:50%;
+    margin-left:-60px;
+    margin-top:-40px;
+    width: 80%;
 } 
 
-div.altezza{
-height: 230px;
+div .altezza{
+    height: 230px;
 }
 /*Massi*/

@@ -91,20 +91,20 @@
                 <div class="col-sm-8 panel panel1 panel-default panel-chiaro"><%= rs.getString("testo")%></div>
                 <div class="col-sm-2"></div>                    
             </div>
-            <% if (rs.getString("media") != null) {%>
-            <div class="row content">
-                <div class="col-sm-2"></div>    
-                <div class="col-sm-8 panel panel1 panel-default panel-chiaro">
-                    
-                        <!--<a href="<1%= rs.getString("media")%>" target="blank" class="link-a-utente">Vai al contenuto multimediale per questo post.</a>-->
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="<%= rs.getString("media") %>"></iframe>
-                        </div>
-                    
-                </div>    
-                <div class="col-sm-2"></div>
-            </div>
-            <% } else  {} %>
+            <% if (!((rs.getString("media")).equals(""))) {%>
+                <div class="row content">
+                    <div class="col-sm-2"></div>    
+                    <div class="col-sm-8 panel panel1 panel-default panel-chiaro">
+
+                            <!--<a href="<1%= rs.getString("media")%>" target="blank" class="link-a-utente">Vai al contenuto multimediale per questo post.</a>-->
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="<%= rs.getString("media") %>"></iframe>
+                            </div>
+
+                    </div>    
+                    <div class="col-sm-2"></div>
+                </div>
+            <% } %>
             <div class="row content">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 panel panel1 panel-default panel-chiaro">

@@ -91,7 +91,7 @@
                                 <div class="col-md-3 truncate"><%= rs.getString("testo")%></div>
                                 <div class="col-md-3">
                                     <a class="btn btn-primary truncate" href="<%= rs.getString("media")%>" target="blank">
-                                        Contenuto multimediale
+                                        Contenuto audio/video
                                     </a>
                                 </div>
                                 <%  } else { %>

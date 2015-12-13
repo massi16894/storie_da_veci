@@ -96,7 +96,7 @@
                 <div class="col-sm-8 col-xs-12">
                     <div class="panel panel1 panel-default panel-chiaro">                               
                         <div class="panel1 panel-heading" style="text-align: center">
-                            <strong>Post pubblicati</strong>
+                            <strong>Storie di <%=info.getString("nome")%></strong>
                         </div>
                         <div class="panel1 panel-body">
                             <!--Post-->
@@ -108,10 +108,11 @@
                                     <td>
                                         <b>Categoria</b>
                                     </td>
+<!--
                                     <td>
                                         <b>Descrizione</b>
                                     </td>
-
+-->
                                 </tr>
                                 <% while(post.next() && cate.next()){%>
                                 <tr>
@@ -126,9 +127,11 @@
                                     <td>
                                         <%=cate.getString("nome")%>
                                     </td>
+                                    <!--
                                     <td>
                                         <%=post.getString("testo")%>
                                     </td>
+                                    -->
                                 </tr>
                                 <%}%>
                             </table>    

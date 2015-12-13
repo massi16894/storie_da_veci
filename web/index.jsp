@@ -53,11 +53,11 @@
                                         <div class="row">
                                                 <% if (user==null) { %>
                                                 <form action=login.jsp method=GET>
-                                                    <button type="submit" class="btn btn-primary hp">Crea Post</button>
+                                                    <button type="submit" class="btn btn-primary hp">Scrivi Storia</button>
                                                 </form>
                                                 <% } else { %>
                                                 <form action=creaPost.jsp method=GET>
-                                                    <button type="submit" class="btn btn-primary hp" value="<%=user.getId()%>">Crea Post</button>
+                                                    <button type="submit" class="btn btn-primary hp" value="<%=user.getId()%>">Scrivi Storia</button>
                                                 </form>
                                                 <% } %>
                                         </div>
