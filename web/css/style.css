@@ -1,27 +1,170 @@
+/** {
+    border: 1px solid red;
+}*/
 /*style categories*/
-.rosso{
-    background-color: #d9534f;
+
+a.btn {
+    background-color: #f1f1f1;
+    background-image: linear-gradient(to bottom,#e7ce98 0,#BA783E 100%);
+    background-repeat: repeat-x;
+    border-color: transparent;
+    color: white;
+    font-size: 15px;
+    border-radius: 0px;
 }
-.verde{
-    background-color:  #4cae4c;
+a.btn:hover{
+    background-color: #BA783E;
+    background-image: linear-gradient(to bottom,#e7ce98 0,#BA783E 100%);
+    background-repeat: repeat-x;
+    border-color: #f1f1f1;
+    color: white;
+    font-size: 15px;
+    background-position: 0 -15px;
 }
-.giallo{
-    background-color:  #f5e79e;
+
+.vertical-align {
+    padding-top: 0px !important;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+body {
+    background: url(../img/tanti-vecchi-felici-2.jpg);
+}
+
+.link-a-utente:hover{
+    color: #23527c;
+    text-decoration: underline;
+}
+
+.linea-categoria{
+    border-bottom: 1px solid #ddd;
+    width: 95%;
+}
+
+.col-sm-8 img.img-piccola{
+    width: 80px;
+    border-color: black;
+    box-shadow: 0 1px 1px white, 0 -1px 1px white;
+}
+.link-a-utente{
+    border: none;
+    background: none;
+    
+    /* text-decoration: underline; */
+    font-size: 18px;
+    color: #337ab7;
+}
+
+h2.blu-titolo {
+    color: green;
+    font-size: 20px;
+}
+
+h2.ara-titolo {
+    color: #b25900;
+    font-size: 20px;
+}
+
+h2.vio-titolo {
+    color: #d24dff;
+    font-size: 20px;
+}
+
+h2.ros-titolo {
+    color: #8c2300;
+    font-size: 20px;
+}
+
+h2.ver-titolo {
+    color: #758b40;
+    font-size: 20px;
+}
+
+h2.azz-titolo {
+    color: #006dd9;
+    font-size: 20px;
+}
+
+#pagina-categoria .hp{
+    height: 100%;
+    font-size: 20px;
+}
+.row .panel-chiaro{
+    background-color: #f1f1f1;
+    border-color: #fff;
+    box-shadow:  0 1px 1px #e8e8e6, 0 -1px 1px #e8e8e6;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.ara{
+    background-color: #b25900;
+    background-image: linear-gradient(to bottom,#ff8000 0,#b25900 100%);
+    background-repeat: repeat-x;
+    border-color: #b25900;
+    color: white;
+}
+.vio{
+    background-color: #660066;
+    background-image: linear-gradient(to bottom,#d24dff 0,#660066 100%);
+    background-repeat: repeat-x;
+    border-color: #660066;
+    color: white;
 }
 .blu{
-    background-color:  #269abc;
+    background-color: #396c39;
+    background-image: linear-gradient(to bottom,#60b560 0,#396c39 100%);
+    background-repeat: repeat-x;
+    border-color: #396c39;
+    color: white;
 }
-.marrone{
-    background-color:  #8a6d3b
+.ros{
+    background-color: #8c2300;
+    background-image: linear-gradient(to bottom,#e0473f 0,#8c2300 100%);
+    background-repeat: repeat-x;
+    border-color: #8c2300;
+    color: white;
 }
-.rosa{
-    background-color:  #dca7a7;
+.ver{
+    background-color: #758b40;
+    background-image: linear-gradient(to bottom,#a8c56b 0,#758b40 100%);
+    background-repeat: repeat-x;
+    border-color: #758b40;
+    color: white;
+}
+.azz{
+    background-color: #006dd9;
+    background-image: linear-gradient(to bottom,#61d2d2 0,#006dd9 100%);
+    background-repeat: repeat-x;
+    border-color: #006dd9;
+    color: white;
 }
 
 .btn-cat {
     width: 100%;
     height: 150px;
     font-size: 25px;
+    color: #fff;
+}
+
+.registrazione{
+    margin-top: 5px;
+}
+
+.registrazione > a{
+    color: #494942;
+    text-decoration: none;
+    background: wheat;
+    background: beige;
+    background-color: rgba(245,245,220, 0.7);
+    padding: 2px;
+    margin-top: 10px;
+    border: 1px solid #c4b18f;
+    text-decoration: underline;
 }
 
 /*carpi*/
@@ -66,6 +209,7 @@
 
 .titolo {
     font-family: cursive;
+    text-shadow: 2px 2px white;
 }
 
 .logout {
@@ -77,7 +221,7 @@
     padding-top: 3%;
 }
 
-.hp{
+.hp {
     width: 100%;
     height: 145px;
     font-size: 30px;
@@ -91,16 +235,16 @@
     display: none;
 }
 
-#registrazione table, #login table{
+#crea table, #registrazione table, #login table{
     margin: 0 auto;
 }
 
-#registrazione table td, #login table td {
+#crea td, #registrazione table td, #login table td {
     padding: 7px;
     
 }
 
-#registrazione table td b {
+#crea table td b, #registrazione table td b {
     text-align: left;
 }
 
@@ -114,6 +258,14 @@
 
 #registrazione input {
     width: 210px;
+}
+
+#crea input {
+    width: 320px;
+}
+
+#crea .submit {
+    width: 100px;
 }
 
 #day, #month {
@@ -217,8 +369,8 @@
 }
 
 .truncate {
-    width: 100%;
-    min-width: 100%;
+    /* width: 100%; */
+    /* min-width: 100%; */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -229,9 +381,37 @@
     .navbar-brand {
         font-size: 30px;
         width: 350px;
-}
-
-.hdata {
-    display: none;
+    }
 }
 /*carpi*/
+.col-sm-7 img.img-media{
+    width: 200%;
+    border-color: black;
+    box-shadow: 0 1px 1px white, 0 -1px 1px white;
+ }
+
+ .title {
+    font-size: 200%;     
+ }
+
+/*Massi*/
+
+div .markup{
+    position:relative;
+    width:220px; 
+    height:80px; 
+}
+
+div .markup img{ 
+    position:absolute;
+    left:50%; 
+    top:50%;
+    margin-left:-60px;
+    margin-top:-40px;
+    width: 80%;
+} 
+
+div .altezza{
+    height: 230px;
+}
+/*Massi*/

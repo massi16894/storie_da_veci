@@ -6,9 +6,7 @@
 package servlet;
 
 import db.DBManager;
-import db.Utente;
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,13 +14,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Francesco
- */
-public class user extends HttpServlet {
+public class delete extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,27 +29,11 @@ public class user extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-        DBManager manager = (DBManager)super.getServletContext().getAttribute("dbmanager");
-        String email = request.getParameter("email");
-        String sql = "SELECT * FROM carpediem.Utente WHERE email = ?";
-        ResultSet rs;
-        HttpSession sess = request.getSession();
-        Utente user;
-        if(email != null){
-            user = new Utente();
-            rs = manager.getData(sql, email);
-            rs.next();
-            user.setId(rs.getString("id_utente"));
-            user.setNome(rs.getString("nome"));
-            user.setCognome(rs.getString("cognome"));
-            user.setEmail(email);
-        } else {
-            user = null;
-        }
-        sess.setAttribute("utente", user);
-        //response.sendRedirect(request.getHeader("Referer"));
-        response.sendRedirect("login.jsp");
-        
+        String id_post = request.getParameter("id_post");
+        DBManager manager = (DBManager)super.getServletContext().getAttribute("dbmanager"); 
+        String sql = "DELETE FROM carpediem.Post WHERE id_post = ?";
+        manager.setData(sql, id_post);
+        response.sendRedirect("userPriv.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -74,7 +51,7 @@ public class user extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(user.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(delete.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -92,7 +69,7 @@ public class user extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(user.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(delete.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

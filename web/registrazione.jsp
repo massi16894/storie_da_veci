@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
-                    <div class="panel panel1 panel-default">
+                    <div class="panel-chiaro panel panel1 panel-default">
                         <div class="panel1 panel-heading">
                             Registration Form
                         </div>
@@ -46,7 +46,9 @@
                                                     <select class="form-control birth" id="month"></select>
                                                     <select class="form-control birth" id="year"></select>
                                                 </td>
-                                                <td class="data"></td>
+                                                <td class="data">
+                                                    <input type="hidden" name="date" value="1900-1-1">
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>
@@ -96,6 +98,14 @@
                                             <tr class="errore invisibile" id="pass">
                                                 <td colspan="2">
                                                     <em>Password non corrispondono</em>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                <label class="control-label">Aggiungi Foto Profilo
+                                                    <input id="up-img" name="profile-img" type="file" multiple class="file-loading">
+                                                </label>
                                                 </td>
                                             </tr>
                                             <tr>

@@ -42,50 +42,6 @@ $(document).ready(function(){
             }
         });
     });
-    
-    cont();
-});
+ });
 
 $("#login input").focusin($("#login-error").addClass("invisibile"));
-
-function sendPassword(){
-    $.ajax({
-        type: "POST",
-        url: "sendPassword",
-        data: {email: $("#login input[name=email]").val()},
-        success: function(esiste){
-            if(esiste==="true"){
-                alert("Email inviata");
-            } else if (esiste==="false"){
-                alert("Email non valida");
-            } else {
-                window.location.href = "argh_page.jsp";
-            }
-        }
-    });
-}
-
-function start(t){
-    $.ajax({
-        type: "POST",
-        url: "script_spettacoli",
-        data: {t: t}
-    });
-    console.log("SCRIPT AVVIATO!");
-}
-
-function cont(){
-    $.ajax({
-        type: "POST",
-        url: "script_spettacoli"
-    });
-}
-
-function stop(){
-    $.ajax({
-        type: "POST",
-        url: "script_spettacoli",
-        data: {stop: true}
-    });
-    console.log("SCRIPT FERMATO!");
-}

@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package servlet;
 
 import db.DBManager;
-import db.Utente;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -16,13 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Francesco
- */
-public class user extends HttpServlet {
+public class validatePost extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,25 +27,16 @@ public class user extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         DBManager manager = (DBManager)super.getServletContext().getAttribute("dbmanager");
-        String email = request.getParameter("email");
-        String sql = "SELECT * FROM carpediem.Utente WHERE email = ?";
-        ResultSet rs;
-        HttpSession sess = request.getSession();
-        Utente user;
-        if(email != null){
-            user = new Utente();
-            rs = manager.getData(sql, email);
-            rs.next();
-            user.setId(rs.getString("id_utente"));
-            user.setNome(rs.getString("nome"));
-            user.setCognome(rs.getString("cognome"));
-            user.setEmail(email);
-        } else {
-            user = null;
+        PrintWriter out = response.getWriter();
+        String titolo = request.getParameter("titolo");
+        String sql;
+        ResultSet rs = null;
+        if (titolo!=null){ // controllo durante login
+            System.out.println("ciao");
+            sql = "SELECT * FROM carpediem.Post WHERE titolo = ?";
+            rs = manager.getData(sql, titolo);
         }
-        sess.setAttribute("utente", user);
-        //response.sendRedirect(request.getHeader("Referer"));
-        response.sendRedirect("login.jsp");
+        out.print(rs.next());
         
     }
 
@@ -74,7 +55,7 @@ public class user extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(user.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(validatePost.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -92,7 +73,7 @@ public class user extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(user.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(validatePost.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
